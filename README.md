@@ -6,19 +6,19 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-|Name|github link|
+|Name|Github link|
 |:---|:---|
-|**Aleksandra Generowicz**|[https://github.com/ale-gen](https://github.com/ale-gen)|
-|**Ángel Gomez Espinosa**|[https://github.com/age296](https://github.com/age296)|
-|**Bartlomiej Nowak**|[https://github.com/barte525](https://github.com/barte525)|
-|**Cristian David Casado**|[https://github.com/CristianDC27](https://github.com/CristianDC27)|
-|**Deyan Rosenov Stanchev**|[https://github.com/deyan18](https://github.com/deyan18)|
-|**Francisco José García García**|[https://github.com/frangarcj](https://github.com/frangarcj)|
-|**Francisco José López Carrillo**|[https://github.com/pcoloc](https://github.com/pcoloc)|
-|**María Gálvez González**|[https://github.com/MariaGalGon](https://github.com/MariaGalGon)|
-|**Martyna Grzegorczyk**|[https://github.com/gtyska](https://github.com/gtyska)|
-|**Paweł Różański**|[https://github.com/RozanskiP](https://github.com/RozanskiP)|
-|**Sokaina Baouch**|[https://github.com/sb575](https://github.com/sb575)|
+|Aleksandra Generowicz|[https://github.com/ale-gen](https://github.com/ale-gen)|
+|Ángel Gomez Espinosa|[https://github.com/age296](https://github.com/age296)|
+|Bartlomiej Nowak|[https://github.com/barte525](https://github.com/barte525)|
+|Cristian David Casado|[https://github.com/CristianDC27](https://github.com/CristianDC27)|
+|Deyan Rosenov Stanchev|[https://github.com/deyan18](https://github.com/deyan18)|
+|Francisco José García García|[https://github.com/frangarcj](https://github.com/frangarcj)|
+|Francisco José López Carrillo|[https://github.com/pcoloc](https://github.com/pcoloc)|
+|María Gálvez González|[https://github.com/MariaGalGon](https://github.com/MariaGalGon)|
+|Martyna Grzegorczyk|[https://github.com/gtyska](https://github.com/gtyska)|
+|Paweł Różański|[https://github.com/RozanskiP](https://github.com/RozanskiP)|
+|Sokaina Baouch|[https://github.com/sb575](https://github.com/sb575)|
   
 ## License
 [![](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
