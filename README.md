@@ -7,7 +7,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 ## Collaborators
 
 |Name|github link|
-|:---:|:---:|
+|:---|:---|
 |**Aleksandra Generowicz**|[https://github.com/ale-gen](https://github.com/ale-gen)|
 |**Ángel Gomez Espinosa**|[https://github.com/age296](https://github.com/age296)|
 |**Bartlomiej Nowak**|[https://github.com/barte525](https://github.com/barte525)|
