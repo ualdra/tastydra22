@@ -1,12 +1,18 @@
 version: '3.7'
+
 services:
-    postgres:
-        image: postgres:latest
-        restart: always
-        environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=postgres
-        ports:
-          - '5438:5432'
-        volumes: 
-          - ./data:/var/lib/postgresql/data
+  postgres:
+    image: "postgres:${POSTGRES_VERSION}"
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '5438:5432'
+    volumes: 
+      - ./data:/var/lib/postgresql/data
+    
+  frontend:
+    build: .
+    ports:
+      - "4200:4200"
