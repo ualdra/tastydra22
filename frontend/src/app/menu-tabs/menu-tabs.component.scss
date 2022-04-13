@@ -4,11 +4,13 @@ $green-accent-hover: #4a5710;
 .d-table {
   display: table;
   width: 100%;
+  text-transform: lowercase;
 }
 
 .d-table-cell {
   display: table-cell;
   vertical-align: middle;
+
 }
 
 .align-left {
@@ -20,12 +22,12 @@ $green-accent-hover: #4a5710;
 }
 
 .mat-button {
-  padding: 5px 15px;
-  border-radius: 20px;
-  margin: 10px;
+  padding: 0 15px 0 15px;
+  border-radius: 30px;
+  margin: 5px;
 }
 
 img {
-  max-height: 100px;
-  width: auto;
+  max-height: 185px;
+  max-width: 185px;
 }
