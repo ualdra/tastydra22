@@ -1,0 +1,31 @@
+$green-accent: #788d17;
+$green-accent-hover: #4a5710;
+
+.d-table {
+  display: table;
+  width: 100%;
+}
+
+.d-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.mat-button {
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+img {
+  max-height: 100px;
+  width: auto;
+}
