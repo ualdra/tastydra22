@@ -4,11 +4,12 @@
 $green-accent: #788D17;
 $green-accent-hover: #4a5710;
 
-.recipe-card{
-  display: flexbox;
+.mat-card{
+  display: inline-block;
   text-align: center;
   background: white;
-  padding: 25px;
+  padding: 15px;
+  margin: 20px;
   border-radius: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   max-width: fit-content;
@@ -23,23 +24,13 @@ $green-accent-hover: #4a5710;
 
 .recipe-card-img{
   object-fit: cover;
-  width:120px;
-  height:120px;
+  width:160px;
+  height:160px;
   border-radius: 3000px;
 }
 
-.recipe-card-button{
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  background: $green-accent;
-  color: white;
-  padding: 9px;
+.mat-button {
+  padding: 5px 15px;
   border-radius: 20px;
-  letter-spacing: 2px;
-  border: none;
-  cursor:pointer;
-}
-
-.recipe-card-button:hover{
-  background: $green-accent-hover;
+  margin: 10px;
 }

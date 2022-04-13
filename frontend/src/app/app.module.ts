@@ -8,13 +8,15 @@ import { MenuTabsComponent } from './menu-tabs/menu-tabs.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeCardComponent,
-    MenuTabsComponent
+    MenuTabsComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
