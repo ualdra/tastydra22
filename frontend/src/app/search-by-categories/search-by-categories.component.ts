@@ -13,10 +13,10 @@ export class SearchByCategoriesComponent implements OnInit {
   form = new FormGroup({});
   ShowFilter = false;
 
-  constructor(private formBuilder: FormBuilder){}
+  //constructor(public formBuilder: FormBuilder){}
 
   ngOnInit() {
-      this.initForm();
+      //this.initForm();
       this.dropdownList = this.getData();
       this.dropdownSettings = {
         singleSelection: false,
@@ -30,11 +30,11 @@ export class SearchByCategoriesComponent implements OnInit {
 
   }
 
-  initForm(){
+ /* initForm(){
     this.form = this.formBuilder.group({
       grocery : ['', [Validators.required]]
     });
-  }
+  }*/
 
   getObjectListFromData(ids:any){
     return this.getData().filter(item => ids.includes(item.item_id));

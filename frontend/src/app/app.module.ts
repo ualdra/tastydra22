@@ -10,8 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { SearchByCategoriesComponent } from './search-by-categories/search-by-categories.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchByCategoriesComponent } from './search-by-categories/search-by-categories.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
@@ -35,7 +35,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule
 
   ],
   providers: [],
