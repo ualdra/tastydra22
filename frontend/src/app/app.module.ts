@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchByCategoriesComponent } from './search-by-categories/search-by-categories.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-detail.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     MenuTabsComponent,
     RecipeListComponent,
     SearchBarComponent,
-    SearchByCategoriesComponent
+    SearchByCategoriesComponent,
+    RecipeCardDetailComponent
   ],
   imports: [
     BrowserModule,
