@@ -1,3 +1,5 @@
 <ul>
-  <app-recipe-card *ngFor="let number of [0,1,2,3,4,5,6,7]"></app-recipe-card>
+  <ng-template  [ngIf]="recipes!=undefined">
+    <app-recipe-card *ngFor="let card of recipes.results" [image]="card.thumbnail_url" [name]="card.name" [id]="card.id"></app-recipe-card>
+  </ng-template>
 </ul>

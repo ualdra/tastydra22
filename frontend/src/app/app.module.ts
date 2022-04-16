@@ -15,7 +15,7 @@ import { SearchByCategoriesComponent } from './search-by-categories/search-by-ca
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-detail.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-deta
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    NgMultiSelectDropDownModule
+    NgMultiSelectDropDownModule,
+    HttpClientModule
 
   ],
   providers: [],
