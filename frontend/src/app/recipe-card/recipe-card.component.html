@@ -1,7 +1,7 @@
 
   <mat-card>
-    <img [src]="'https://www.cocinayvino.com/wp-content/uploads/2016/10/35702711_m-1200x900.jpg'" class="recipe-card-img" alt="">
-    <div class="recipe-card-title">Recipe Title</div>
+    <img [src]="image" class="recipe-card-img" alt="{{fullName}}" title="{{fullName}}">
+    <div class="recipe-card-title" title="{{fullName}}">{{name}}</div>
     <button mat-button>See More Details</button>
   </mat-card>
 
