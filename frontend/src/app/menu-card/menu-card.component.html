@@ -1,0 +1,25 @@
+<mat-card>
+  <div class="menu-date">
+    <span class="menu-date-number">25</span>
+    <span class="menu-date-name">Monday</span>
+  </div>
+
+  <div class="menu-content">
+    <div class="menu-section" *ngFor="let sectionTitle of menuTypes">
+      <span class="menu-section-title">{{ sectionTitle }}</span>
+      <div class="menu-items-list" >
+        <div class="menu-item" *ngFor="let i of [1, 2]">
+          <img
+            [src]="
+              'https://www.cocinayvino.com/wp-content/uploads/2016/10/35702711_m-1200x900.jpg'
+            "
+            class="menu-item-img"
+            alt=""
+          />
+          <div class="menu-item-title">Recipe Title</div>
+        </div>
+        <mat-icon class="menu-add-button">add</mat-icon>
+      </div>
+    </div>
+  </div>
+</mat-card>
