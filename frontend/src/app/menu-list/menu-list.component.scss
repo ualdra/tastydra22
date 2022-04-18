@@ -1,0 +1,36 @@
+.menu-list{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mat-icon-button {
+  justify-content: center;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.mat-icon{
+  color: black;
+}
+
+.month{
+  margin: 20px;
+  font-size: 2em;
+  font-weight: bolder;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.menu-header{
+  text-align: center;
+  padding: 20px;
+}

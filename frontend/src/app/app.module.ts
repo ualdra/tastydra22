@@ -16,6 +16,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuCardComponent } from './menu-card/menu-card.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     RecipeListComponent,
     SearchBarComponent,
     SearchByCategoriesComponent,
-    RecipeCardDetailComponent
+    RecipeCardDetailComponent,
+    MenuCardComponent,
+    MenuListComponent
   ],
   imports: [
     BrowserModule,
