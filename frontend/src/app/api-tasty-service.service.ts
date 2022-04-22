@@ -19,9 +19,12 @@ export class ApiTastyServiceService {
       })
   };
   constructor(private http: HttpClient) { }
-  
-  getRecipes(from : number = 0, size : number = 20): Observable<Recipes> {
+  getRecipes(from : number = 0, size : number = 20, q: String | undefined = undefined): Observable<Recipes> {
     // Testing here
-    return this.http.get<Recipes>(this.tastyUrl +"recipes/list?from="+from+"&size="+size, this.httpOptions);
+    let requestURL = this.tastyUrl +"recipes/list?from="+from+"&size="+size;
+    if(q){
+      requestURL+="&q="+q.toLowerCase()
+    }
+    return this.http.get<Recipes>(requestURL, this.httpOptions);
   }
 }
