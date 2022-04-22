@@ -1,0 +1,80 @@
+$green-accent: #788D17;
+$green-accent-hover: #4a5710;
+$green-soft: #CFE085;
+
+.mat-card{
+  display: inline-block;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}
+
+// Day of the week
+
+.menu-date-number{
+  color: white;
+  font-weight: bold;
+  background-color: $green-accent;
+  padding: 7px;
+  border-radius: 20px;
+}
+
+.menu-date-name{
+  font-weight: bolder;
+  margin-left: 8px;
+}
+
+.menu-date{
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+// Content
+
+.menu-content{
+  max-height: 40em;
+  overflow:auto;
+  padding-top: 10px;
+}
+
+.menu-section-title{
+  font-weight: bold;
+  background-color: $green-soft;
+  padding: 8px 40px;
+  border-radius: 20px;
+}
+
+.menu-items-list{
+  margin: 20px 50px;
+}
+
+.menu-item-img{
+  object-fit: cover;
+  width:100px;
+  height:100px;
+  border-radius: 3000px;
+}
+
+.menu-item-title{
+  font-weight: bold;
+  font-size: small;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+
+
+.menu-add-button{
+  width: auto;
+  height: auto;
+  color: rgb(176, 176, 176);
+  font-size: 40px;
+}
+
+

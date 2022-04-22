@@ -21,7 +21,6 @@ export class RecipeListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.apiTastyServiceService.getRecipes(0, this.numberOfRecipes).subscribe(data => this.recipes = data);
-   /* window.addEventListener('scroll', () => {
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var complete = true;
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
@@ -39,6 +38,7 @@ export class RecipeListComponent implements OnInit {
         this.numberOfRecipes += 20;
       }
     });*/
+
   }
 
 }
