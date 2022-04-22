@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
 
 
 @Entity
@@ -23,13 +24,16 @@ public class User {
     private long id;
 
     @NotBlank(message = "Name is mandatory")
+    @Length(max = 30)
     private String name;
 
     @Email
     @NotBlank(message = "Email is mandatory")
+    @Length(max = 30)
     private String email;
 
     @NotBlank(message = "Password is mandatory")
+    @Length(max = 30)
     private String password;
     
     @NotBlank(message = "Token is mandatory")

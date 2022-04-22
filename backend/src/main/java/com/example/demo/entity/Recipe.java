@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "recipes")
@@ -21,6 +22,7 @@ public class Recipe {
     private Date date;
 
     @NotBlank(message = "Meal type is mandatory")
+    @Length(max = 15)
     private String mealType;
 
     public Recipe() {}
