@@ -1,3 +1,5 @@
+<app-search-bar (searchRecipe)="addItem($event)"></app-search-bar>
+<app-search-by-categories></app-search-by-categories>
 <ul>
   <ng-template  [ngIf]="recipes!=undefined">
     <app-recipe-card *ngFor="let card of recipes.results" [image]="card.thumbnail_url" [name]="card.name" [id]="card.id"></app-recipe-card>
