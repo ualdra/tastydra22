@@ -30,9 +30,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Checkout
-        uses: actions/checkout@v3
-
       # Workflow dispatch event that pushes the current version to the release branch.
       # From here the secondary production deployment workflow will trigger to build the dependencies.
       - name: Deploy 🚀
