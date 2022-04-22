@@ -46,6 +46,10 @@ public class Recipe {
         this.date = date;
     }
 
+    public String getMealType() {
+        return mealType;
+    }
+
     public void setMealType(String mealType) {
         this.mealType = mealType;
     }
