@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatIconModule } from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { MenuTabsComponent } from './menu-tabs/menu-tabs.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -18,6 +18,9 @@ import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-deta
 import { HttpClientModule } from '@angular/common/http';
 import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { RecipeIngredientsCardComponent } from './recipe-ingredients-card/recipe-ingredients-card.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     SearchByCategoriesComponent,
     RecipeCardDetailComponent,
     MenuCardComponent,
-    MenuListComponent
+    MenuListComponent,
+    RecipeIngredientsCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +46,11 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     ReactiveFormsModule,
     NgSelectModule,
     NgMultiSelectDropDownModule,
-    HttpClientModule
-
+    HttpClientModule,
+    MatCheckboxModule,
+    MatGridListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

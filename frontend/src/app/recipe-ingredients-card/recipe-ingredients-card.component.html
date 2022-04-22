@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title class="card-title">Ingredients</mat-card-title>
+
+  <ul class="list" >
+    <li *ngFor="let ingredient of ingredients">
+      <mat-checkbox>{{ ingredient }}</mat-checkbox>
+    </li>
+  </ul>
+
+  <mat-card-actions align="end">
+    <button mat-button>Add ingredients</button>
+  </mat-card-actions>
+</mat-card>
