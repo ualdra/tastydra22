@@ -1,9 +1,14 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -30,13 +35,17 @@ public class User {
     @NotBlank(message = "Token is mandatory")
     private String token;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Recipe> recipes;
+
     public User() {}
 
-    public User(String name, String email, String password, String token) {
+    public User(String name, String email, String password, String token, List<Recipe> recipes) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.token = token;
+        this.recipes = recipes;
     }
 
     public long getId() {
@@ -77,6 +86,14 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public List<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
     @Override
