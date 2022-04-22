@@ -29,6 +29,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: frontend
+          folder: frontend/dist
           clean: true
           single-commit: true
