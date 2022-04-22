@@ -2,6 +2,6 @@
   <mat-card>
     <img [src]="image" class="recipe-card-img" alt="{{fullName}}" title="{{fullName}}">
     <div class="recipe-card-title" title="{{fullName}}">{{name}}</div>
-    <button mat-button>See More Details</button>
+    <button mat-button routerLink="/recipe/{{id}}">See More Details</button>
   </mat-card>
 
