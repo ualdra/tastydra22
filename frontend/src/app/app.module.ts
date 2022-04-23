@@ -20,12 +20,13 @@ import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { RecipeIngredientsCardComponent } from './recipe-ingredients-card/recipe-ingredients-card.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { PreparationCardComponent } from './preparation-card/preparation-card.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     RecipeCardComponent,
     MenuTabsComponent,
@@ -37,8 +38,9 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     MenuListComponent,
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
-      RecipeDetailComponent
-   ],
+    RecipeDetailComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -52,7 +54,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     NgMultiSelectDropDownModule,
     HttpClientModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
