@@ -23,6 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { PreparationCardComponent } from './preparation-card/preparation-card.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { AboutTastyComponent } from './about-tasty/about-tasty.component';
 
 @NgModule({
   declarations: [	
@@ -37,7 +38,8 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     MenuListComponent,
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
-      RecipeDetailComponent
+      RecipeDetailComponent,
+      AboutTastyComponent
    ],
   imports: [
     BrowserModule,
