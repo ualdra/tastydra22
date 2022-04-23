@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-ingredients-card',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-ingredients-card.component.scss']
 })
 export class RecipeIngredientsCardComponent implements OnInit {
-  ingredients: string[] = ["Milk", "Sugar", "Chocolate", "Flour", "Cinnamon", "Butter"];
+  @Input() ingredients: string[] = ["Milk", "Sugar", "Chocolate", "Flour", "Cinnamon", "Butter"];
 
   constructor() { }
 

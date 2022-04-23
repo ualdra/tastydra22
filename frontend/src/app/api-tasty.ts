@@ -1,13 +1,15 @@
 export interface Recipes{
     count: Number;
-    results: resultsRecipes[];
+    results: Recipe[];
 }
 
-interface resultsRecipes{
+export interface Recipe{
     id: number;
     thumbnail_url: string;
     name: string;
-    tags: tags;
+    tags: tags[];
+    instructions: Instructions[];
+    sections: Section[]
 }
 
 interface tags{
@@ -15,4 +17,21 @@ interface tags{
     display_name: String;
     type: String;
     name: String;
+}
+interface Instructions{
+    id: number;
+    display_text: string;
+    position: number;
+}
+interface Section{
+    components: Component[]
+}
+interface Component{
+    id: number;
+    raw_text: string;
+    ingredient: Ingredient;
+}
+interface Ingredient{
+    id: number;
+    display_singular: string;
 }

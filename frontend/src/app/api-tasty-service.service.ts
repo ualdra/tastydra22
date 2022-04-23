@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Recipes } from './api-tasty';
+import { Recipe, Recipes } from './api-tasty';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -26,5 +26,9 @@ export class ApiTastyServiceService {
       requestURL+="&q="+q.toLowerCase()
     }
     return this.http.get<Recipes>(requestURL, this.httpOptions);
+  }
+  getRecipe(id : number): Observable<Recipe>{
+    let requestURL = this.tastyUrl + "recipes/get-more-info/?id="+id;
+    return this.http.get<Recipe>(requestURL, this.httpOptions);
   }
 }
