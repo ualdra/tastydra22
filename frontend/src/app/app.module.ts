@@ -18,6 +18,7 @@ import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-deta
 import { HttpClientModule } from '@angular/common/http';
 import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     SearchByCategoriesComponent,
     RecipeCardDetailComponent,
     MenuCardComponent,
-    MenuListComponent
+    MenuListComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,

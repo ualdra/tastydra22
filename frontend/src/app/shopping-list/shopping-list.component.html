@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="add-item">
+    <input [(ngModel)]="newItem" type="text" placeholder="New Item" />
+    <div class="add-item-button">
+      <mat-icon (click)="handleAddItem()" class="white">add</mat-icon>
+    </div>
+  </div>
+  <div class="menu-content">
+    <div class="mat-card">
+      SHOPPING LIST
+      <ul>
+        <li *ngFor="let item of listOfShopingItems">
+          <input type="checkbox" [(ngModel)]="item.checked" />
+          {{ item.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
