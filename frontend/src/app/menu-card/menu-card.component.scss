@@ -3,14 +3,14 @@ $green-accent-hover: #4a5710;
 $green-soft: #CFE085;
 
 .mat-card{
+  width: 400px;
   display: inline-block;
   text-align: center;
   background: white;
-  padding: 15px;
+  padding: 0px;
   margin: 20px;
   border-radius: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  max-width: fit-content;
 }
 
 // Day of the week
@@ -29,19 +29,28 @@ $green-soft: #CFE085;
 }
 
 .menu-date{
-  margin-bottom: 30px;
+  padding-top: 20px;
+  margin: 20px;
   text-align: left;
 }
 
 // Content
 
 .menu-content{
-  max-height: 40em;
-  overflow:auto;
+
+  vertical-align:middle;
   padding-top: 10px;
 }
 
+
+.menu-item{
+  align-self: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
 .menu-section-title{
+  vertical-align:middle;
   font-weight: bold;
   background-color: $green-soft;
   padding: 8px 40px;
@@ -49,8 +58,16 @@ $green-soft: #CFE085;
 }
 
 .menu-items-list{
-  margin: 20px 50px;
+  justify-content: center;
+  max-width: 400px;
+  flex-wrap: wrap;
+
+  vertical-align:middle;
+  vertical-align: center;
+  display: flex;
+  margin: 20px 0px;
 }
+
 
 .menu-item-img{
   object-fit: cover;
@@ -68,13 +85,21 @@ $green-soft: #CFE085;
   padding-bottom: 10px;
 }
 
+.menu-section{
 
+  padding: 0px;
+  margin: 0px;
+}
 
 .menu-add-button{
+  padding-left: 15px;
+  padding-bottom: 40px;
+  align-self: center;
   width: auto;
   height: auto;
   color: rgb(176, 176, 176);
   font-size: 40px;
+  cursor: pointer;
 }
 
 

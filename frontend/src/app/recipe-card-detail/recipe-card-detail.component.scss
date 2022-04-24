@@ -5,14 +5,14 @@ $green-accent: #788D17;
 $green-accent-hover: #4a5710;
 
 .mat-card{
-  display: inline-block;
+  display: block;
   text-align: center;
   background: white;
   padding: 15px;
   margin: 20px;
   border-radius: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  max-width: 220px;
+
 }
 
 .image{
@@ -31,9 +31,9 @@ $green-accent-hover: #4a5710;
 
 .recipe-card-img{
   object-fit: cover;
-  width:160px;
-  height:160px;
-  border-radius: 3000px;
+  width:230px;
+  height:230px;
+  border-radius: 20px;
   margin: 15px;
 }
 
