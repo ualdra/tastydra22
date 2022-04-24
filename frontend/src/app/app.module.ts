@@ -20,13 +20,16 @@ import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { RecipeIngredientsCardComponent } from './recipe-ingredients-card/recipe-ingredients-card.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { PreparationCardComponent } from './preparation-card/preparation-card.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { AboutTastyComponent } from './about-tasty/about-tasty.component';
+import { LoginComponent } from './login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     RecipeCardComponent,
     MenuTabsComponent,
@@ -38,9 +41,10 @@ import { AboutTastyComponent } from './about-tasty/about-tasty.component';
     MenuListComponent,
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
-      RecipeDetailComponent,
-      AboutTastyComponent
-   ],
+    RecipeDetailComponent,
+    AboutTastyComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -54,7 +58,9 @@ import { AboutTastyComponent } from './about-tasty/about-tasty.component';
     NgMultiSelectDropDownModule,
     HttpClientModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
