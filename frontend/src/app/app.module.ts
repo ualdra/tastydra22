@@ -27,6 +27,7 @@ import { AboutTastyComponent } from './about-tasty/about-tasty.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     RecipeDetailComponent,
     AboutTastyComponent,
     LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

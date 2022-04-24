@@ -80,6 +80,11 @@ body {
   background-color: $green-accent-hover;
 }
 
+// Hides Microsoft Edge default button that shows/hides password
+::-ms-reveal {
+  display: none;
+}
+
 /* Custom multiselect dropdown */
 
 $base-color: #788D17;
