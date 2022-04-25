@@ -39,3 +39,6 @@ modules/.vscode
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+## Postgresql data folder
+/data
