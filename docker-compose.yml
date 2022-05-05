@@ -3,7 +3,7 @@ version: '3.7'
 services:
   postgres:
     image: postgres:latest
-    restart: always
+    restart: unless-stopped
     env_file:
       - ./.env
     ports:
@@ -15,10 +15,13 @@ services:
     build: ./frontend
     ports:
       - "8080:80"
+    restart: unless-stopped
 
   backend:
     build: ./backend
+    
     depends_on:
       - postgres
     ports:
       - "8081:8081"
+    restart: unless-stopped

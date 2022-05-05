@@ -30,7 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +50,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AboutTastyComponent,
     LoginComponent,
     SignUpComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

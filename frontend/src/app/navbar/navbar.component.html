@@ -1,0 +1,35 @@
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="#"> <img src="assets/logos/logochef.png" /></a>
+  <button class="hamburger hamburger--emphatic {{isActive}}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Menu" >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button mat-button routerLink="/">MENU <mat-icon>calendar_month</mat-icon></button>
+      </li>
+      <li class="nav-item">
+        <button mat-button routerLink="/recipes">RECIPES <mat-icon>restaurant_menu</mat-icon></button>
+      </li>
+      <li class="nav-item">
+        <button mat-button routerLink="/about">ABOUT<mat-icon>info</mat-icon></button>
+      </li>
+      <li class="nav-item">
+        <button mat-button>SHOPPING LIST <mat-icon>shopping_cart</mat-icon></button>
+      </li>
+    </ul>
+
+  </div>
+  <ul class="navbar-nav ml-auto nav-flex-icons fixedNavBarItem">
+  <li class="nav-item">
+    <button mat-icon-button onclick="myFunction()">
+      <mat-icon>person</mat-icon>
+    </button>
+  </li>
+  </ul>
+</nav>
+
+
