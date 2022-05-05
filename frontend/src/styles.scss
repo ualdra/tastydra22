@@ -2,12 +2,11 @@
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
 // Plus imports for other components in your app.
-
+@import "./app/navbar/hamburgers.scss";
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -50,9 +49,10 @@ $green-background: #e1eba3;
 
 html,
 body {
+  max-width: 95vw;
   height: 100%;
   margin: 1em;
-  background-color: $green-background;
+  background-color: $green-background!important;
 }
 
 .mat-button {
@@ -320,4 +320,17 @@ $disable-background-color: #eceeef;
 .selected-item {
   border-radius: 15px !important;
   padding: 0 8px 0 8px !important;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb{
+  background-color: $green-accent;
+  border-radius: 10px;
 }
