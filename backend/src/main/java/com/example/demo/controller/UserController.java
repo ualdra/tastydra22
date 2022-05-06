@@ -1,13 +1,16 @@
 package com.example.demo.controller;
 
 import java.util.Optional;
+import com.example.demo.entity.Recipe;
 import com.example.demo.entity.User;
+import com.example.demo.repository.RecipeRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 
 @RestController
@@ -17,6 +20,9 @@ public class UserController {
     @Autowired
     UserRepository usersRepository;
 
+    @Autowired
+    RecipeRepository recipesRepository;
+
     @RequestMapping
     public ResponseEntity<Object> findUsers() {
         return ResponseEntity.ok(usersRepository.findAll());
@@ -24,6 +30,14 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Object> Insert(@RequestBody User user){
+        if (user != null) {
+            List<Recipe> userRecipes = user.getRecipes();
+            if (userRecipes.size() > 0) {
+                for (Recipe recipe : userRecipes) {
+                    recipesRepository.save(recipe);
+                }
+            }
+        }
         return ResponseEntity.ok(usersRepository.save(user));
     }
 
