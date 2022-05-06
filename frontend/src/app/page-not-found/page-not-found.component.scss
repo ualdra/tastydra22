@@ -1,0 +1,20 @@
+.menu {
+  max-height: 40em;
+  overflow: auto;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mat-card {
+  display: inline-block;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}

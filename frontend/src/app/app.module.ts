@@ -24,6 +24,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PreparationCardComponent } from './preparation-card/preparation-card.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { AboutTastyComponent } from './about-tasty/about-tasty.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -45,6 +46,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
     RecipeDetailComponent,
+    PageNotFoundComponent
     AboutTastyComponent,
     LoginComponent,
     SignUpComponent,
