@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import {
   trigger,
   state,
