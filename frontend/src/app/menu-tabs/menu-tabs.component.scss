@@ -1,26 +1,6 @@
 $green-accent: #788d17;
 $green-accent-hover: #4a5710;
 
-.d-table {
-  display: table;
-  width: 100%;
-  text-transform: lowercase;
-}
-
-.d-table-cell {
-  display: table-cell;
-  vertical-align: middle;
-
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
 .mat-button {
   padding: 0 15px 0 15px;
   border-radius: 30px;
@@ -30,5 +10,24 @@ $green-accent-hover: #4a5710;
 img {
   max-height: 185px;
   max-width: 185px;
+}
+
+.menu{
+  display: flex;
+  align-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.menu-part{
+  display: flex;
+  vertical-align: middle;
+  align-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
 }
 

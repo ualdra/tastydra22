@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Recipes } from './api-tasty';
+import { Recipe, Recipes } from './api-tasty';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,9 +19,16 @@ export class ApiTastyServiceService {
       })
   };
   constructor(private http: HttpClient) { }
-  
-  getRecipes(from : number = 0, size : number = 20): Observable<Recipes> {
+  getRecipes(from : number = 0, size : number = 20, q: String | undefined = undefined): Observable<Recipes> {
     // Testing here
-    return this.http.get<Recipes>(this.tastyUrl +"recipes/list?from="+from+"&size="+size, this.httpOptions);
+    let requestURL = this.tastyUrl +"recipes/list?from="+from+"&size="+size;
+    if(q){
+      requestURL+="&q="+q.toLowerCase()
+    }
+    return this.http.get<Recipes>(requestURL, this.httpOptions);
+  }
+  getRecipe(id : number): Observable<Recipe>{
+    let requestURL = this.tastyUrl + "recipes/get-more-info/?id="+id;
+    return this.http.get<Recipe>(requestURL, this.httpOptions);
   }
 }

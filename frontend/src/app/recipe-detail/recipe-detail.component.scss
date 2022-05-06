@@ -1,0 +1,13 @@
+.all{
+  display: flex;
+}
+
+.left{
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .all{
+    display: block;
+  }
+}

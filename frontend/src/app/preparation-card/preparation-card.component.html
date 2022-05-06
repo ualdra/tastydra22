@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title class="card-title">Preparation</mat-card-title>
+  <mat-card-content>
+    <!-- [(ngModel)]= {{preparation_text}}-->
+    <ol *ngIf="recipe">
+      <li *ngFor="let instruction of recipe.instructions">{{instruction.display_text}}</li>
+    </ol>
+  </mat-card-content>
+</mat-card>

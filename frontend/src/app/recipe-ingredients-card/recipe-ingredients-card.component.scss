@@ -1,0 +1,43 @@
+$green-accent: #788d17;
+
+.mat-card {
+  display: block;
+  text-align: left;
+  background: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+  max-height: fit-content;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.mat-button {
+  padding: 0 15px 0 15px;
+  border-radius: 30px;
+  margin: 15px;
+}
+
+.list {
+  padding: 10px;
+
+  list-style-type: none;
+}
+
+.mat-checkbox {
+  // margin: 5px;
+  // width: 100%;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $green-accent;
+}
