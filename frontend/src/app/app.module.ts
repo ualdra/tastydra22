@@ -18,6 +18,7 @@ import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-deta
 import { HttpClientModule } from '@angular/common/http';
 import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeIngredientsCardComponent } from './recipe-ingredients-card/recipe-ingredients-card.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -40,6 +41,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     RecipeCardDetailComponent,
     MenuCardComponent,
     MenuListComponent,
+    ShoppingListComponent
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
     RecipeDetailComponent,
