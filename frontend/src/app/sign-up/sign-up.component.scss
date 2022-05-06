@@ -1,0 +1,92 @@
+$green-accent: #788d17;
+$green-accent-hover: #4a5710;
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 70%;
+}
+
+.mat-card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  padding: 50px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}
+
+.mat-button {
+  padding: 0 50px 0 50px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.mat-icon-button {
+  background-color: transparent;
+  color: $green-accent;
+  border: none;
+  cursor: pointer;
+}
+
+.mat-icon-button:hover {
+  background-color: transparent;
+  color: $green-accent-hover;
+}
+
+// mat-icon-stepper selected color change
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: $green-accent;
+}
+
+//input outline color
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $green-accent;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $green-accent;
+}
+
+// mat-input error outline color
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  color: red;
+  opacity: 0.8;
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+  caret-color: $green-accent;
+}
+
+// mat-input error carent color
+::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+  caret-color: red;
+}
+
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+  color: $green-accent;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: $green-accent;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: red;
+}
+
+// ::ng-deep .mat-form-field {
+//   .mat-hint, input, ::placeholder, .mat-form-field-label {
+//      color: white;
+//   }
+// }

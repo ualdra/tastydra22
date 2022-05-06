@@ -1,3 +1,4 @@
+import { AboutTastyComponent } from './about-tasty/about-tasty.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuListComponent } from './menu-list/menu-list.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', component: MenuListComponent },
   { path: 'recipes', component: RecipeListComponent },
   { path: 'recipe/:id', component: RecipeDetailComponent },
+  { path: 'about', component: AboutTastyComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent}
 ];
 
