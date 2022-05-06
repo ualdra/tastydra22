@@ -1,7 +1,5 @@
 import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MDBBootstrapModule, NavbarModule } from 'angular-bootstrap-md';
 import {
   trigger,
   state,
