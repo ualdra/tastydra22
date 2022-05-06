@@ -42,11 +42,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     RecipeCardDetailComponent,
     MenuCardComponent,
     MenuListComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
     RecipeIngredientsCardComponent,
     PreparationCardComponent,
     RecipeDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
     AboutTastyComponent,
     LoginComponent,
     SignUpComponent,
