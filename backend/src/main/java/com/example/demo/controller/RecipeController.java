@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.List;
 import java.util.Optional;
 import com.example.demo.entity.Recipe;
 import com.example.demo.repository.RecipeRepository;
@@ -22,11 +23,6 @@ public class RecipeController {
         return ResponseEntity.ok(recipesRepository.findAll());
     }
 
-    @PostMapping
-    public ResponseEntity<Object> Insert(@RequestBody Recipe recipe){
-        return ResponseEntity.ok(recipesRepository.save(recipe));
-    }
-
     @RequestMapping("/{id}")
     public ResponseEntity<Object> findRecipeById(@PathVariable long id) {
         Optional<Recipe> recipe = recipesRepository.findById(id);
@@ -35,6 +31,21 @@ public class RecipeController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
+    }
+
+    @GetMapping("/mealType={mealType}")
+    public ResponseEntity<Object> findRecipesByMealType(@PathVariable String mealType) {
+        List<Recipe> recipes = recipesRepository.findByMealType(mealType);
+        if (recipes != null) {
+            return ResponseEntity.ok(recipes);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> Insert(@RequestBody Recipe recipe){
+        return ResponseEntity.ok(recipesRepository.save(recipe));
     }
 
     @PatchMapping("/{id}")
