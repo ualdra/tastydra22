@@ -15,7 +15,7 @@ export class ApiTastyServiceService {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'X-RapidAPI-Host' : 'tasty.p.rapidapi.com',
-        'X-RapidAPI-Key' : '3247b8c30bmsh4823d62a21cdc8cp1251a0jsn88afa5b3557c',
+        'X-RapidAPI-Key' : '49c8af2722msh24981a34815bb61p103064jsnd2f761265cda',
       })
   };
   constructor(private http: HttpClient) { }
