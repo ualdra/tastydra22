@@ -11,11 +11,11 @@ export class ApiTastyServiceService {
   private tastyUrl = 'https://tasty.p.rapidapi.com/';
   httpOptions = {
     headers: new HttpHeaders(
-      { 
+      {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'X-RapidAPI-Host' : 'tasty.p.rapidapi.com',
-        'X-RapidAPI-Key' : '49c8af2722msh24981a34815bb61p103064jsnd2f761265cda',
+        'X-RapidAPI-Key' : '-49c8af2722msh24981a34815bb61p103064jsnd2f761265cda',
       })
   };
   constructor(private http: HttpClient) { }

@@ -1,6 +1,6 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css);
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
   .fixedNavBarItem {
     position: absolute;
     top: 10px;
@@ -45,8 +45,9 @@
 }
 }
 @media screen and (min-width:768px) {
-  .hamburger-box {
+  .hamburger {
     display: none;
+    position: absolute;
   }
 
   .navbar-nav {
@@ -73,6 +74,20 @@ $green-accent-hover: #4a5710;
 img {
   max-height: 185px;
   max-width: 185px;
+}
+
+@media screen and (max-width:934px) and (min-width:768px) {
+  .mat-button{
+    letter-spacing: 1px;
+      font-size: 1.5vw;
+  }
+
+  img {
+      max-width: 125px;
+      max-height: 125px;
+
+
+  }
 }
 
 .menu{
