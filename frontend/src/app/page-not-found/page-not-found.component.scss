@@ -1,5 +1,12 @@
+.ng-star-inserted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .menu {
   //max-height: 40em;
+  display: flex;
   overflow: auto;
   padding-top: 10px;
   justify-content: center;
@@ -24,5 +31,13 @@ label{
 }
 .label-404 {
   padding: .5em;
-  font-size: 10vw;
+
+  font-size: clamp(16px, 10vw, 100px);
+}
+
+img {
+  max-width: 500px;
+}
+h2 {
+  padding-top: 0.5em;
 }
