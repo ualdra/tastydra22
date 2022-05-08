@@ -1,19 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script>
-    (function () {
-      // Retrieve the URL the user was trying to access when receiving the 404.
-      var redirect = sessionStorage.redirect;
-      // Remove the URL from sessionStorage.
-      delete sessionStorage.redirect;
-      // Check if we actually need to redirect.
-      if (redirect && redirect != location.href) {
-        // We need to redirect to the URL the user was trying to access.
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
   <meta charset="utf-8">
   <title>Tasty</title>
   <base href="/">
@@ -24,6 +11,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="mat-typography">
-  <app-root></app-root>
+  <app-page-not-found></app-page-not-found>
 </body>
 </html>
