@@ -15,7 +15,7 @@ import { SearchByCategoriesComponent } from './search-by-categories/search-by-ca
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { RecipeCardDetailComponent } from './recipe-card-detail/recipe-card-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MenuCardComponent } from './menu-card/menu-card.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -31,6 +31,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { CustomHttpInterceptor } from './http-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     SignUpComponent,
     NavbarComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

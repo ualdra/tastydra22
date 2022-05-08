@@ -1,4 +1,4 @@
-<div class="all">
+<div class="all" *ngIf="recipe != undefined">
   <div class="left">
     <app-recipe-card-detail [recipe]="recipe"></app-recipe-card-detail>
     <app-recipe-ingredients-card [ingredients]="ingredients"></app-recipe-ingredients-card>

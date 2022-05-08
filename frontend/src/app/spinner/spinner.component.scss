@@ -1,0 +1,51 @@
+@keyframes bouncing {
+  0% {
+    top: 40%;
+  }
+  100% {
+    top: 30%;
+  }
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-overlay-wrapper {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+  z-index: 1009;
+  // background: rgba(112, 191, 93, 0.5);
+
+  .bee-spinner {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    position: fixed;
+    z-index: 100;
+    background-image: url(../../assets/woodenspoon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    animation: spin 1s  infinite;
+  }
+}
