@@ -2,7 +2,9 @@
   <div class="recipe-card-title">{{recipe.name}}</div>
   <img [src]="recipe.thumbnail_url" class="recipe-card-img" alt="">
   <div class="recipe-card-detail-difficulty">Difficulty:
-    <img src="/assets/recipe-difficulty/easy.svg" class="image">
+    <img *ngIf="recipe.instructions.length <= 10" src="/assets/recipe-difficulty/easy.svg" class="image">
+    <img *ngIf="recipe.instructions.length <= 20 && recipe.instructions.length > 10" src="/assets/recipe-difficulty/middle.svg" class="image">
+    <img *ngIf="recipe.instructions.length > 20" src="/assets/recipe-difficulty/hard.svg" class="image">
   </div>
   <button mat-button>Save recipe</button>
 </mat-card>
