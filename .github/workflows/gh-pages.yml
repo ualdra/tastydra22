@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npx ng build --base-href /tastydra22/
+        run: npx ng build --deploy-url=https://ualdra.github.io/tastydra22/ --base-href /tastydra22/
       # Workflow dispatch event that pushes the current version to the release branch.
       # From here the secondary production deployment workflow will trigger to build the dependencies.
       - name: Deploy 🚀
