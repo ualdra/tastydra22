@@ -35,17 +35,19 @@
 	align-content: center;
 
   z-index: 1009;
-  // background: rgba(112, 191, 93, 0.5);
+  background: rgba(80, 80, 80, 0.5);
+  background-color: rgba(80, 80, 80, 0.5);
 
-  .bee-spinner {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    position: fixed;
-    z-index: 100;
-    background-image: url(../../assets/woodenspoon.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    animation: spin 1s  infinite;
-  }
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  position: fixed;
+  z-index: 100;
+  background-image: url(../../assets/woodenspoon.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: spin 1s  infinite;
 }
