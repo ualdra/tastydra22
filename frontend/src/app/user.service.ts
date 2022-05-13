@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Recipe } from './recipe';
 import { User } from './user';
 
@@ -8,37 +9,28 @@ import { User } from './user';
   providedIn: 'root',
 })
 export class UserService {
-  private url = 'http://localhost:8081/api/';
 
   private urlUser = 'users';
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.url + this.urlUser);
+    return this.http.get<User[]>(environment.url + this.urlUser);
   }
 
   getUser(id: number): Observable<User> {
-    return this.http.get<User>(this.url + this.urlUser + `/${id}`);
+    return this.http.get<User>(environment.url + this.urlUser + `/${id}`);
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.url + this.urlUser, user);
+    return this.http.post<User>(environment.url + this.urlUser, user);
   }
 
   updateUser(id: number, user: User): Observable<User> {
-    return this.http.put<User>(this.url + this.urlUser + `/${id}`, user);
+    return this.http.patch<User>(environment.url + this.urlUser + `/${id}`, user);
   }
 
   deleteUser(id: number) {
-    this.http.delete(this.url + this.urlUser + `/${id}`);
-  }
-
-  getRecipesByUserId(id: number): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>(this.url + this.urlUser);
-  }
-
-  addRecipeToUser(id: number, user: User): Observable<User> {
-    return this.http.put<User>(this.url + this.urlUser + `/${id}`, user);
+    return this.http.delete(environment.url + this.urlUser + `/${id}`);
   }
 }
