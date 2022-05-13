@@ -29,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npx ng build --base-href /tastydra22/
+        run: npx ng build --base-href /tastydra22/ 
+      - name: Copy index to 404 
+        run: cp frontend/dist/tasty/index.html frontend/dist/tasty/404.html
       # Workflow dispatch event that pushes the current version to the release branch.
       # From here the secondary production deployment workflow will trigger to build the dependencies.
       - name: Deploy 🚀
