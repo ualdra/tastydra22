@@ -1,5 +1,6 @@
 export interface Recipe {
-  id: number;
+  id: number | null;
+  mealId: number;
   date: string;
   mealType: string;
 }
