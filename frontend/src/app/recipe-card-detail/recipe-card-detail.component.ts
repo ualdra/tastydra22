@@ -15,7 +15,7 @@ import { MenuData } from '../menu-data';
 })
 export class RecipeCardDetailComponent implements OnInit {
   @Input() recipe: Recipe | undefined;
-  menuInfo?: MenuData;
+  menuInfo?: MenuData = { date: new Date(), type: '' };
 
   constructor(public dialog: MatDialog) {}
 
