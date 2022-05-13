@@ -33,6 +33,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CustomHttpInterceptor } from './http-interceptor';
+import { RecipeDialogComponent } from './recipe-dialog/recipe-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +60,7 @@ import { CustomHttpInterceptor } from './http-interceptor';
     SignUpComponent,
     NavbarComponent,
     SpinnerComponent,
+    RecipeDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +78,10 @@ import { CustomHttpInterceptor } from './http-interceptor';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
