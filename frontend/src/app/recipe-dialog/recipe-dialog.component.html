@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Save recipe</h1>
+<div mat-dialog-content class="card-content">
+  <mat-card class="demo-inline-calendar-card">
+    <mat-calendar [(selected)]="dateSelected"></mat-calendar>
+  </mat-card>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Type of meal</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let type of types" [value]="typeSelected">
+        {{ type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="buttons-position">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="dateSelected" cdkFocusInitial>
+    Save
+  </button>
+</div>

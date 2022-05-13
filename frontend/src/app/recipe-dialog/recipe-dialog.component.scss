@@ -1,0 +1,17 @@
+$green-accent: #788d17;
+$green-accent-hover: #4a5710;
+
+.demo-inline-calendar-card {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons-position{
+  justify-content: flex-end;
+}

@@ -6,6 +6,5 @@
     <img *ngIf="recipe.instructions.length <= 20 && recipe.instructions.length > 10" src="/assets/recipe-difficulty/middle.svg" class="image">
     <img *ngIf="recipe.instructions.length > 20" src="/assets/recipe-difficulty/hard.svg" class="image">
   </div>
-  <button mat-button>Save recipe</button>
+  <button mat-button (click)="openDialog()">Save recipe</button>
 </mat-card>
-
