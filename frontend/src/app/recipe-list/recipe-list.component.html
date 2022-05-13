@@ -5,3 +5,7 @@
     <app-recipe-card *ngFor="let card of recipes.results" [image]="card.thumbnail_url" [name]="card.name" [id]="card.id"></app-recipe-card>
   </ng-template>
 </ul>
+
+<div  class="no-results" *ngIf="recipes?.count==0">
+  <img src="../../assets/marionotfoundglasses.png" alt="" class="mario">
+</div>
