@@ -22,15 +22,33 @@ export class RecipeService {
 
   getRecipeByMealType(mealType: string): Observable<Recipe> {
     return this.http.get<Recipe>(
-      `${environment.url + this.urlRecipe}/mealType={${mealType}}`
+      `${environment.url + this.urlRecipe}/mealType=${mealType}`
     );
   }
 
   updateRecipe(id: number, recipe: Recipe): Observable<Recipe> {
-    return this.http.patch<Recipe>(`${environment.url + this.urlRecipe}/${id}`, recipe);
+    return this.http.patch<Recipe>(
+      `${environment.url + this.urlRecipe}/${id}`,
+      recipe
+    );
   }
 
-  deleteRecipe(id: number): Observable<Recipe> {
-    return this.http.delete<Recipe>(`${environment.url + this.urlRecipe}/${id}`);
+  deleteRecipe(idUser: number, idRecipe: number) {
+    return this.http.delete<Recipe>(
+      `${environment.url + this.urlRecipe}/${idUser}/${idRecipe}`
+    );
+  }
+
+  addRecipeToUser(id: number, recipe: Recipe): Observable<Recipe> {
+    return this.http.post<Recipe>(
+      environment.url + this.urlRecipe + `/userId=${id}`,
+      recipe
+    );
+  }
+
+  getRecipesByUserId(id: number): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(
+      environment.url + this.urlRecipe + `/userId=${id}`
+    );
   }
 }

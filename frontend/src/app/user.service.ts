@@ -9,7 +9,6 @@ import { User } from './user';
   providedIn: 'root',
 })
 export class UserService {
-
   private urlUser = 'users';
 
   constructor(private http: HttpClient) {}
@@ -27,7 +26,10 @@ export class UserService {
   }
 
   updateUser(id: number, user: User): Observable<User> {
-    return this.http.patch<User>(environment.url + this.urlUser + `/${id}`, user);
+    return this.http.patch<User>(
+      environment.url + this.urlUser + `/${id}`,
+      user
+    );
   }
 
   deleteUser(id: number) {

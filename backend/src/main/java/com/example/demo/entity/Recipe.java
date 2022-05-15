@@ -18,6 +18,9 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull(message = "Meal Id is mandatory")
+    private long mealId;
+
     @NotNull(message = "Date is mandatory")
     private Date date;
 
@@ -25,11 +28,13 @@ public class Recipe {
     @Length(max = 15)
     private String mealType;
 
-    public Recipe() {}
+    public Recipe() {
+    }
 
-    public Recipe(Date date, String mealType) {
+    public Recipe(long mealId, Date date, String mealType) {
         this.date = date;
         this.mealType = mealType;
+        this.mealId = mealId;
     }
 
     public long getId() {
@@ -38,6 +43,14 @@ public class Recipe {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getMealId() {
+        return this.mealId;
+    }
+
+    public void setMealId(long mealId) {
+        this.mealId = mealId;
     }
 
     public Date getDate() {
@@ -58,7 +71,6 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Recipe: " + id + "\nDate: " + date + "\nMeal type: " + mealType;
+        return "Recipe: " + id + "\nMeal Id: " + mealId + "\nDate: " + date + "\nMeal type: " + mealType;
     }
-
 }

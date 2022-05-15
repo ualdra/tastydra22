@@ -41,6 +41,8 @@ public class UserController {
         return ResponseEntity.ok(usersRepository.save(user));
     }
 
+
+
     @RequestMapping("/{id}")
     public ResponseEntity<Object> findUserById(@PathVariable long id) {
         Optional<User> user = usersRepository.findById(id);
@@ -52,7 +54,7 @@ public class UserController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<User> updateExpense(@PathVariable("id") long id, @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
         User foundedUser = usersRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User with id " + id + " not found"));
         foundedUser.setName(user.getName());
         foundedUser.setEmail(user.getEmail());
