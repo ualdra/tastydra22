@@ -1,14 +1,24 @@
 <mat-card>
   <div class="menu-date">
-    <span class="menu-date-number">25</span>
-    <span class="menu-date-name">Monday, March</span>
+<div>
+  <span class="menu-date-number">25</span>
+  <span class="menu-date-name">Monday, March</span>
+</div>
+
+
+<div class="right-side">
+  <button mat-icon-button class="toggle-edit-button" (click)="editItems=!editItems"><mat-icon *ngIf="!editItems">edit</mat-icon><mat-icon *ngIf="editItems">close</mat-icon></button>
+</div>
+
+
   </div>
 
   <div class="menu-content">
     <div class="menu-section" *ngFor="let sectionTitle of menuTypes">
       <span class="menu-section-title">{{ sectionTitle }}</span>
       <div class="menu-items-list" >
-        <div class="menu-item" *ngFor="let i of [1, 2]">
+        <div class="menu-item" *ngFor="let i of [1, 2]" (click)="openDialog()">
+          <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
           <img
             [src]="
               'https://www.cocinayvino.com/wp-content/uploads/2016/10/35702711_m-1200x900.jpg'

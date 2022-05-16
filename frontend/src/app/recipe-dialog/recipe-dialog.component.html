@@ -1,10 +1,17 @@
-<h1 mat-dialog-title>Save recipe</h1>
+
+<div class="dialog-header">
+
+  <h1 mat-dialog-title *ngIf="!isEdit">Save recipe</h1>
+  <h1 mat-dialog-title *ngIf="isEdit">Edit recipe</h1>
+  <button mat-icon-button class="remove-button" *ngIf="isEdit"><mat-icon>delete</mat-icon></button>
+</div>
+
 <div mat-dialog-content class="card-content">
   <mat-card class="demo-inline-calendar-card">
     <mat-calendar [(selected)]="dateSelected"></mat-calendar>
   </mat-card>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field class="form-meal" appearance="fill">
     <mat-label>Type of meal</mat-label>
     <mat-select>
       <mat-option *ngFor="let type of types" [value]="typeSelected">
@@ -14,7 +21,7 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions class="buttons-position">
-  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
   <button mat-button [mat-dialog-close]="dateSelected" cdkFocusInitial>
     Save
   </button>

@@ -4,6 +4,7 @@ $green-accent-hover: #4a5710;
 .demo-inline-calendar-card {
   width: 250px;
   margin-bottom: 10px;
+  background-color: rgb(245, 245, 245);
 }
 
 .card-content{
@@ -13,5 +14,34 @@ $green-accent-hover: #4a5710;
 }
 
 .buttons-position{
-  justify-content: flex-end;
+  display: flex;
+
+	justify-content: end;
+
+}
+
+.remove-button{
+  background-color: rgb(219, 0, 0);
+}
+
+.cancel-button{
+  background-color: gray;
+}
+
+.dialog-header{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+  margin-bottom: 15px;
+}
+
+.mat-dialog-title{
+  margin: 0px;
+}
+
+.form-meal{
+  width: 252px;
 }
