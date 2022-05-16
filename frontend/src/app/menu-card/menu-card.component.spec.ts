@@ -6,6 +6,7 @@ describe('MenuCardComponent', () => {
   let component: MenuCardComponent;
   let fixture: ComponentFixture<MenuCardComponent>;
 
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MenuCardComponent ]

@@ -3,7 +3,7 @@ $green-accent-hover: #4a5710;
 $green-soft: #CFE085;
 
 .mat-card{
-  width: 400px;
+  // width: 400px;
   display: inline-block;
   text-align: center;
   background: white;
@@ -16,10 +16,12 @@ $green-soft: #CFE085;
 // Day of the week
 
 .menu-date-number{
+  vertical-align: middle;
+  font-size: large;
   color: white;
-  font-weight: bold;
+  font-weight: bolder;
   background-color: $green-accent;
-  padding: 7px;
+  padding: 8px;
   border-radius: 20px;
 }
 
@@ -29,6 +31,14 @@ $green-soft: #CFE085;
 }
 
 .menu-date{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
   padding-top: 20px;
   margin: 20px;
   text-align: left;
@@ -65,7 +75,7 @@ $green-soft: #CFE085;
   vertical-align:middle;
   vertical-align: center;
   display: flex;
-  margin: 20px 0px;
+  margin: 20px 20px;
 }
 
 
@@ -76,6 +86,32 @@ $green-soft: #CFE085;
   border-radius: 3000px;
 }
 
+.menu-item-overlay{
+  vertical-align: middle;
+  position: absolute;
+  background: rgba(67, 67, 67, 0.489);
+  object-fit: cover;
+  width:100px;
+  height:100px;
+  border-radius: 3000px;
+}
+
+.edit-item-icon{
+
+  color: white;
+}
+
+.test{
+  width:100px;
+  height:100px;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
 .menu-item-title{
   font-weight: bold;
   font-size: small;
@@ -84,6 +120,7 @@ $green-soft: #CFE085;
   padding-top: 5px;
   padding-bottom: 10px;
 }
+
 
 .menu-section{
 
@@ -101,5 +138,3 @@ $green-soft: #CFE085;
   font-size: 40px;
   cursor: pointer;
 }
-
-
