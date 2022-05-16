@@ -15,11 +15,11 @@ export class RecipeDialogComponent implements OnInit {
   dateSelected: Date = new Date();
   types: string[] = ['Breakfast', 'Lunch', 'Dinner'];
   typeSelected: string = '';
-  isEdit= false;
+  isEdit = false;
 
   constructor(
     public dialogRef: MatDialogRef<RecipeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: MenuData
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isEdit = data.isEdit;
    }
