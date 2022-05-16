@@ -6,7 +6,7 @@ describe('RecipeDialogComponent', () => {
   let component: RecipeDialogComponent;
   let fixture: ComponentFixture<RecipeDialogComponent>;
 
-  beforeEach(async () => {
+ /*  beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ RecipeDialogComponent ]
     })
@@ -17,7 +17,7 @@ describe('RecipeDialogComponent', () => {
     fixture = TestBed.createComponent(RecipeDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }); */
 
   // it('should create', () => {
   //   expect(component).toBeTruthy();

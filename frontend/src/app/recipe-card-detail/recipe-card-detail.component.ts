@@ -24,7 +24,9 @@ export class RecipeCardDetailComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(RecipeDialogComponent, {
       width: '500px',
-      data: this.menuInfo,
+      data: {
+        isEdit: false
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
