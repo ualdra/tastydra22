@@ -1,9 +1,9 @@
-
 <div class="dialog-header">
-
   <h1 mat-dialog-title *ngIf="!isEdit">Save recipe</h1>
   <h1 mat-dialog-title *ngIf="isEdit">Edit recipe</h1>
-  <button mat-icon-button class="remove-button" *ngIf="isEdit"><mat-icon>delete</mat-icon></button>
+  <button mat-icon-button class="remove-button" *ngIf="isEdit">
+    <mat-icon>delete</mat-icon>
+  </button>
 </div>
 
 <div mat-dialog-content class="card-content">
@@ -13,8 +13,8 @@
 
   <mat-form-field class="form-meal" appearance="fill">
     <mat-label>Type of meal</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let type of types" [value]="typeSelected">
+    <mat-select [(value)]="typeSelected">
+      <mat-option *ngFor="let type of types" [value]="type">
         {{ type }}
       </mat-option>
     </mat-select>
@@ -22,7 +22,7 @@
 </div>
 <div mat-dialog-actions class="buttons-position">
   <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
-  <button mat-button [mat-dialog-close]="dateSelected" cdkFocusInitial>
+  <button mat-button [disabled]="typeSelected === ''" (click)="onSave()" cdkFocusInitial>
     Save
   </button>
 </div>

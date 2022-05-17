@@ -22,11 +22,20 @@ export class RecipeDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isEdit = data.isEdit;
-   }
+  }
 
   ngOnInit(): void {}
 
   onCancel(): void {
     this.dialogRef.close();
+  }
+
+  onSave(): void {
+    let menuInfo: MenuData = {
+      date: this.dateSelected,
+      type: this.typeSelected,
+      isEdit: this.isEdit,
+    };
+    this.dialogRef.close(menuInfo);
   }
 }
