@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.user$ = this.store.select('user');
     this.user$.subscribe((us) => (this.user = us));
-    if (this.user?.id !== undefined) {
+    if (this.user?.id !== null) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
