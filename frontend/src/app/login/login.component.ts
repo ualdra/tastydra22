@@ -15,7 +15,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
   hide = true;
   public user$: Observable<User>;
-  public user!: User;
+  public user: any;
   public isLogged = false;
 
   public signin: Signin = {
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.user$ = this.store.select('user');
     this.user$.subscribe((us) => (this.user = us));
-    if (this.user.id !== null) {
+    if (this.user?.id !== undefined) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
