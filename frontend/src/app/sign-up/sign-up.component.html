@@ -2,17 +2,21 @@
   <mat-card>
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
-      <input matInput />
+      <input matInput [(ngModel)]="newUser.name" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput />
+      <input matInput [(ngModel)]="newUser.email" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
-      <input matInput [type]="hide_password ? 'password' : 'text'" />
+      <input
+        matInput
+        [type]="hide_password ? 'password' : 'text'"
+        [(ngModel)]="newUser.password"
+      />
       <button
         mat-icon-button
         matSuffix
@@ -26,12 +30,16 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Repeat password</mat-label>
-      <input matInput [type]="hide_repeat ? 'password' : 'text'" />
+      <input
+        matInput
+        [type]="hide_repeat ? 'password' : 'text'"
+        [(ngModel)]="secondPassword"
+      />
       <button mat-icon-button matSuffix (click)="hide_repeat = !hide_repeat">
         <mat-icon>{{ hide_repeat ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
     </mat-form-field>
 
-    <button mat-button>Sign up</button>
+    <button (click)="signUp()" mat-button>Sign up</button>
   </mat-card>
 </div>

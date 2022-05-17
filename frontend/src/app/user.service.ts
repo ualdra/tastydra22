@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Recipe } from './recipe';
+import { Signin } from './signin';
 import { User } from './user';
 
 @Injectable({
@@ -15,6 +16,10 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(environment.url + this.urlUser);
+  }
+
+  login(signin: Signin): Observable<User> {
+    return this.http.post<User>(environment.url + this.urlUser + '/login', signin)
   }
 
   getUser(id: number): Observable<User> {

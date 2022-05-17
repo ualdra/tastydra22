@@ -24,7 +24,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PreparationCardComponent } from './preparation-card/preparation-card.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutTastyComponent } from './about-tasty/about-tasty.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,10 +34,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CustomHttpInterceptor } from './http-interceptor';
 import { RecipeDialogComponent } from './recipe-dialog/recipe-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatSelectModule} from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './store/user.reducer';
 
 @NgModule({
   declarations: [
@@ -81,13 +83,16 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    StoreModule.forRoot({ user: userReducer }),
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: CustomHttpInterceptor,
-    multi: true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
