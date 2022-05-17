@@ -16,7 +16,7 @@ $green-accent-hover: #4a5710;
 .buttons-position{
   display: flex;
 
-	justify-content: end;
+	justify-content: flex-end;
 
 }
 
@@ -26,6 +26,11 @@ $green-accent-hover: #4a5710;
 
 .cancel-button{
   background-color: gray;
+}
+
+.mat-button:disabled {
+  background-color: rgb(202, 200, 200);
+  color: black;
 }
 
 .dialog-header{

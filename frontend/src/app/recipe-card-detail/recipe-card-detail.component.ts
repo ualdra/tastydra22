@@ -25,17 +25,18 @@ export class RecipeCardDetailComponent implements OnInit {
     const dialogRef = this.dialog.open(RecipeDialogComponent, {
       width: '500px',
       data: {
-        isEdit: false
+        isEdit: false,
       },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      // this.menuInfo = {
-      //   date: result.dateSelected,
-      //   type: result.typeSelected,
-      // };
-      // console.log('The dialog was closed: ' + this.menuInfo.type);
-      console.log('The dialog was closed: ');
+      if (result != undefined) {
+        this.menuInfo = {
+          date: result.date,
+          type: result.type,
+          isEdit: result.isEdit,
+        };
+      }
     });
   }
 }
