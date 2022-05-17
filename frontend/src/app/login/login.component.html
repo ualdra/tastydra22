@@ -1,19 +1,31 @@
 <div class="box">
   <mat-card>
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput />
-    </mat-form-field>
+    <div *ngIf="!isLogged">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="signin.email" />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          [(ngModel)]="signin.password"
+        />
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button (click)="login()" mat-button>Log in</button>
+    </div>
+    <div *ngIf="isLogged">
+      <button (click)="logout()" mat-button>Log out</button>
+    </div>
+    <div *ngIf="!isLogged">
+      <button mat-button routerLink="/signup" class="sign-up-button">
+        Sign up
       </button>
-    </mat-form-field>
-
-    <button mat-button>Log in</button>
-    <button mat-button class="sign-up-button">Sign up</button>
+    </div>
   </mat-card>
 </div>
