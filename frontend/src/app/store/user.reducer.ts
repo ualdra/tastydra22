@@ -10,6 +10,7 @@ export const initialUserState: User = {
   password: '',
   recipes: [],
   token: '',
+  ingredients: [],
 };
 
 export const userReducer = createReducer(
