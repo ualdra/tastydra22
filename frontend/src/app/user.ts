@@ -1,3 +1,4 @@
+import { Ingredient } from './ingredient';
 import { Recipe } from './recipe';
 
 export interface User {
@@ -7,4 +8,5 @@ export interface User {
   password: string;
   token: string;
   recipes: Recipe[];
+  ingredients: Ingredient[];
 }

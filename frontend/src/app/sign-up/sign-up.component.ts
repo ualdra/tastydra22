@@ -25,7 +25,8 @@ export class SignUpComponent implements OnInit {
     name: '',
     password: '',
     recipes: [],
-    token: 'sddd',
+    token: 'veeeeryloooongtoookeeen',
+    ingredients: [],
   };
 
   constructor(
