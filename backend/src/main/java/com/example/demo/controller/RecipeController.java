@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import com.example.demo.entity.Recipe;
 import com.example.demo.entity.User;
@@ -79,6 +78,7 @@ public class RecipeController {
         Recipe foundedRecipe = recipesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Recipe with id " + id + " not found"));
         foundedRecipe.setDate(recipe.getDate());
         foundedRecipe.setMealType(recipe.getMealType());
+        foundedRecipe.setMealId(recipe.getMealId());
         final Recipe updatedRecipe = recipesRepository.save(foundedRecipe);
         return ResponseEntity.ok(updatedRecipe);
     }

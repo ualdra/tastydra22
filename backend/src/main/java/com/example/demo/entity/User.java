@@ -12,6 +12,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Length;
 
 
@@ -39,17 +42,24 @@ public class User {
     @NotBlank(message = "Token is mandatory")
     private String token;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Recipe> recipes;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Ingredient> ingredients;
 
     public User() {}
 
-    public User(String name, String email, String password, String token, List<Recipe> recipes) {
+    public User(String name, String email, String password, String token, List<Recipe> recipes, 
+    List<Ingredient> ingredients) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.token = token;
         this.recipes = recipes;
+        this.ingredients = ingredients;
     }
 
     public long getId() {
@@ -98,6 +108,14 @@ public class User {
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredient(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override
