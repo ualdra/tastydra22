@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
 import java.util.Optional;
+
+import com.example.demo.entity.Ingredient;
 import com.example.demo.entity.Recipe;
 import com.example.demo.entity.User;
 import com.example.demo.modelDTO.SigninDTO;
 import com.example.demo.repository.RecipeRepository;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -22,6 +25,9 @@ public class UserController {
 
     @Autowired
     RecipeRepository recipesRepository;
+    
+    @Autowired
+    IngredientRepository ingredientsRepository;
 
     @RequestMapping
     public ResponseEntity<Object> findUsers() {
@@ -35,6 +41,12 @@ public class UserController {
             if (userRecipes.size() > 0) {
                 for (Recipe recipe : userRecipes) {
                     recipesRepository.save(recipe);
+                }
+            }
+            List<Ingredient> userIngredients = user.getIngredients();
+            if (userIngredients.size() > 0) {
+                for (Ingredient ingredient : userIngredients) {
+                    ingredientsRepository.save(ingredient);
                 }
             }
         }
@@ -73,6 +85,7 @@ public class UserController {
         foundedUser.setPassword(user.getPassword());
         foundedUser.setToken(user.getToken());
         foundedUser.setRecipes(user.getRecipes());
+        foundedUser.setIngredient(user.getIngredients());
         final User updatedUser = usersRepository.save(foundedUser);
         return ResponseEntity.ok(updatedUser);
     }
