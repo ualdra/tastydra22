@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
 
 import { RecipeIngredientsCardComponent } from './recipe-ingredients-card.component';
 
@@ -8,9 +11,9 @@ describe('RecipeIngredientsCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecipeIngredientsCardComponent ]
-    })
-    .compileComponents();
+      imports: [StoreModule.forRoot({}, {}), HttpClientModule, MatDialogModule],
+      declarations: [RecipeIngredientsCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -8,10 +8,19 @@
   <div class="menu-content">
     <div class="mat-card">
       SHOPPING LIST
+      <div>
+        {{ text }}
+      </div>
       <ul>
-        <li *ngFor="let item of listOfShopingItems">
-          <input type="checkbox" [(ngModel)]="item.checked" />
-          {{ item.name }}
+        <li *ngFor="let item of listOfIngredient">
+          <mat-checkbox
+            [(ngModel)]="item.isChecked"
+            (ngModelChange)="
+              check(item.id, item.ingredientName, item.isChecked)
+            "
+            >{{ item.ingredientName }}</mat-checkbox
+          >
+          <mat-icon (click)="delete(item.id)" class="white">delete</mat-icon>
         </li>
       </ul>
     </div>

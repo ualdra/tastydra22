@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { ShoppingListComponent } from './shopping-list.component';
 
@@ -8,9 +10,9 @@ describe('ShoppingListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShoppingListComponent ]
-    })
-    .compileComponents();
+      imports: [StoreModule.forRoot({}, {}), HttpClientModule],
+      declarations: [ShoppingListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

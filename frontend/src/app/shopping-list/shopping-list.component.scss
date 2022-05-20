@@ -1,3 +1,5 @@
+$green-accent: #788d17;
+
 .main {
   justify-content: center;
   align-items: center;
@@ -68,4 +70,14 @@ li {
   text-align: left;
   margin-right: 50px;
   margin-top: 10px;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $green-accent;
+}
+
+::ng-deep .mat-checkbox  {
+  display: inline-block;
+  min-width: 400px;
 }
