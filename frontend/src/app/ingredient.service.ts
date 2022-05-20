@@ -28,8 +28,8 @@ export class IngredientService {
     );
   }
 
-  getIngredientByUserId(userId: number): Observable<Ingredient> {
-    return this.http.get<Ingredient>(
+  getIngredientByUserId(userId: number): Observable<Ingredient[]> {
+    return this.http.get<Ingredient[]>(
       `${environment.url + this.urlIngredient}/userId=${userId}`
     );
   }
@@ -44,7 +44,7 @@ export class IngredientService {
     );
   }
 
-  updateByUserId(
+  updateById(
     userId: number,
     ingredient: Ingredient
   ): Observable<Ingredient> {
@@ -54,9 +54,9 @@ export class IngredientService {
     );
   }
 
-  deleteByIdAndUserId(id: number, userId: number): Observable<Ingredient> {
+  deleteByIdAndUserId(userId: number, id: number): Observable<Ingredient> {
     return this.http.delete<Ingredient>(
-      `${environment.url + this.urlIngredient}/${id}/${userId}`
+      `${environment.url + this.urlIngredient}/${userId}/${id}`
     );
   }
 }

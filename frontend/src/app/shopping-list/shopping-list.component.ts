@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Ingredient } from '../ingredient';
+import { IngredientService } from '../ingredient.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-shopping-list',
@@ -6,50 +11,68 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-list.component.scss'],
 })
 export class ShoppingListComponent implements OnInit {
-  constructor() {}
+  public user$: Observable<User>;
+  public user: any;
+  public newItem: string = '';
+  public listOfIngredient: Ingredient[] = [];
+  public text: string = '';
+
+  constructor(
+    private store: Store<{ user: User }>,
+    private ingredientService: IngredientService
+  ) {
+    this.user$ = this.store.select('user');
+    this.user$.subscribe((us) => (this.user = us));
+    this.refresh();
+  }
 
   ngOnInit(): void {}
 
-  public newItem: string = '';
-
-  public listOfShopingItems: ShopingItem[] = [
-    {
-      id: 1,
-      name: 'Butter',
-      checked: false,
-    },
-    {
-      id: 2,
-      name: 'Bread',
-      checked: true,
-    },
-    {
-      id: 3,
-      name: 'Eggs - 5',
-      checked: false,
-    },
-    {
-      id: 4,
-      name: 'Salt',
-      checked: false,
-    },
-  ];
-
   handleAddItem() {
-    if(this.newItem !== ''){
-      let newItem: ShopingItem = {
-        id: 5,
-        name: this.newItem,
-        checked: false,
+    if (this.newItem !== '') {
+      let newItem: Ingredient = {
+        id: null,
+        ingredientName: this.newItem,
+        isChecked: false,
       };
-      this.listOfShopingItems.push(newItem);
+      this.ingredientService.insertByUserId(1, newItem).subscribe(() => {
+        this.refresh();
+      });
       this.newItem = '';
     }
   }
-}
 
-export interface ShopingItem {
-  id: number;
-  name: string;
-  checked: boolean;
+  check(id: any, name: string, check: boolean) {
+    this.ingredientService
+      .updateById(id, { id: id, ingredientName: name, isChecked: check })
+      .subscribe(() => {
+        this.refresh();
+      });
+  }
+
+  delete(id: any) {
+    this.ingredientService
+      .deleteByIdAndUserId(this.user.id, id)
+      .subscribe(() => {
+        this.refresh();
+      });
+  }
+
+  refresh() {
+    if (this.user?.id !== null) {
+      this.ingredientService
+        .getIngredientByUserId(this.user?.id)
+        .subscribe((ingredients: Ingredient[]) => {
+          this.listOfIngredient = [];
+          this.listOfIngredient.push(...ingredients);
+          if (this.listOfIngredient.length === 0) {
+            this.text = 'You have no ingredients';
+          }else{
+            this.text = "";
+          }
+        });
+    } else {
+      this.text = 'Not logged in user cannot have shopping list';
+    }
+  }
 }

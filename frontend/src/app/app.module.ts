@@ -40,6 +40,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/user.reducer';
+import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { userReducer } from './store/user.reducer';
     NavbarComponent,
     SpinnerComponent,
     RecipeDialogComponent,
+    InformationDialogComponent,
   ],
   imports: [
     BrowserModule,
