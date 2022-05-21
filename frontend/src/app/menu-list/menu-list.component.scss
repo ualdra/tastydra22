@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+#text.mat-card {
+  display: inline-block;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}
+
 .mat-icon-button {
   justify-content: center;
   text-align: center;

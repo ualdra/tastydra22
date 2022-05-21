@@ -1,10 +1,15 @@
+<div *ngIf="text.length>0" id="text" class="mat-card">
+  Menu
+  <div>
+    {{ text }}
+  </div>
+</div>
 
-
-<div class="menu-list">
+<div class="menu-list" *ngFor="let i of [0, 1, 2, 3, 4]">
  <!--  <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_left</mat-icon>
 </button> -->
-  <app-menu-card *ngFor="let i of [1, 2, 3, 4, 5]" ></app-menu-card>
+  <app-menu-card *ngif="listOfRecipes.length>0" [index]="i" [listOfRecipes]="listOfRecipes"></app-menu-card>
   <!-- <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_right</mat-icon>
 </button> -->

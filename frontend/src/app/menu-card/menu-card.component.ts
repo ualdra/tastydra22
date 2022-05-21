@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../api-tasty';
+import { Component, Input, OnInit } from '@angular/core';
+import { Recipe } from '../recipe';
 import {
   MatDialog,
   MatDialogRef,
@@ -15,11 +15,19 @@ import { MenuData } from '../menu-data';
 })
 export class MenuCardComponent implements OnInit {
   editItems = false;
-  constructor(public dialog: MatDialog) { }
   menuTypes = ["Breakfast", "Lunch", "Dinner"];
-  menuInfo?: MenuData = { date: new Date(), type: '', isEdit: true };
+  @Input() index?: number;
+  menuInfo?: MenuData;
+  @Input() listOfRecipes: Recipe[] = [];
+
+  constructor(
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
+    var date = new Date();
+    date.setDate(date.getDate() + this.index!)
+    this.menuInfo = { date: date, type: '', isEdit: true };
   }
 
   openDialog(): void {
