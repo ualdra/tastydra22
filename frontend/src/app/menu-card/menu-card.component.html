@@ -1,8 +1,8 @@
 <mat-card>
   <div class="menu-date">
 <div>
-  <span class="menu-date-number">25</span>
-  <span class="menu-date-name">Monday, March</span>
+  <span class="menu-date-number">{{menuInfo?.date?.toString()?.substring(7,10)}}</span>
+  <span class="menu-date-name">{{menuInfo?.date?.toString()?.substring(0,7)}}</span>
 </div>
 
 
