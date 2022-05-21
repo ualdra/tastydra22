@@ -1,35 +1,52 @@
 <mat-card>
   <div class="menu-date">
-<div>
-  <span class="menu-date-number">{{menuInfo?.date?.toString()?.substring(7,10)}}</span>
-  <span class="menu-date-name">{{menuInfo?.date?.toString()?.substring(0,7)}}</span>
-</div>
+    <div>
+      <span class="menu-date-number">{{menuInfo?.date?.toString()?.substring(7,10)}}</span>
+      <span class="menu-date-name">{{menuInfo?.date?.toString()?.substring(0,7)}}</span>
+    </div>
 
 
-<div class="right-side">
-  <button mat-icon-button class="toggle-edit-button" (click)="editItems=!editItems"><mat-icon *ngIf="!editItems">edit</mat-icon><mat-icon *ngIf="editItems">close</mat-icon></button>
-</div>
-
-
+    <div class="right-side">
+      <button mat-icon-button class="toggle-edit-button" (click)="editItems=!editItems"><mat-icon *ngIf="!editItems">edit</mat-icon><mat-icon *ngIf="editItems">close</mat-icon></button>
+    </div>
   </div>
 
   <div class="menu-content">
-    <div class="menu-section" *ngFor="let sectionTitle of menuTypes">
-      <span class="menu-section-title">{{ sectionTitle }}</span>
+    <div class="menu-section">
+      <span class="menu-section-title">Breakfast</span>
       <div class="menu-items-list" >
-        <div class="menu-item" *ngFor="let i of [1, 2]" (click)="openDialog()">
+        <div class="menu-item" *ngFor="let breakfast of breakfastRecipes" (click)="openDialog()" (click)="openRecipe(breakfast)">
           <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
-          <img
-            [src]="
-              'https://www.cocinayvino.com/wp-content/uploads/2016/10/35702711_m-1200x900.jpg'
-            "
-            class="menu-item-img"
-            alt=""
-          />
-          <div class="menu-item-title">Recipe Title</div>
+          <img [src]="breakfast.thumbnail_url" class="menu-item-img" [alt]="breakfast.name"/>
+          <div class="menu-item-title">{{breakfast.name}}</div>
         </div>
         <mat-icon class="menu-add-button">add</mat-icon>
       </div>
     </div>
+
+    <div class="menu-section">
+      <span class="menu-section-title">Lunch</span>
+      <div class="menu-items-list" >
+        <div class="menu-item" *ngFor="let lunch of lunchRecipes" (click)="openDialog()" (click)="openRecipe(lunch)">
+          <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
+          <img [src]="lunch.thumbnail_url" class="menu-item-img" [alt]="lunch.name"/>
+          <div class="menu-item-title">{{lunch.name}}</div>
+        </div>
+        <mat-icon class="menu-add-button">add</mat-icon>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <span class="menu-section-title">Dinner</span>
+      <div class="menu-items-list" >
+        <div class="menu-item" *ngFor="let dinner of dinnerRecipes" (click)="openDialog()" (click)="openRecipe(dinner)">
+          <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
+          <img [src]="dinner.thumbnail_url" class="menu-item-img" [alt]="dinner.name"/>
+          <div class="menu-item-title">{{dinner.name}}</div>
+        </div>
+        <mat-icon class="menu-add-button">add</mat-icon>
+      </div>
+    </div>
+
   </div>
 </mat-card>
