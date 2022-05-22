@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { MenuListComponent } from './menu-list.component';
 
@@ -9,7 +10,7 @@ describe('MenuListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule,StoreModule.forRoot({}, {})],
       declarations: [ MenuListComponent ]
     })
     .compileComponents();
