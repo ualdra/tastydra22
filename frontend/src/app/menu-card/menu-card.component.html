@@ -15,10 +15,10 @@
     <div class="menu-section">
       <span class="menu-section-title">Breakfast</span>
       <div class="menu-items-list" >
-        <div class="menu-item" *ngFor="let breakfast of breakfastRecipes" (click)="openDialog()" (click)="openRecipe(breakfast)">
+        <div class="menu-item" *ngFor="let breakfast of breakfastRecipes" (click)="openDialog(breakfast.tastyRecipe, breakfast.backendRecipe)" (click)="openRecipe(breakfast.tastyRecipe)">
           <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
-          <img [src]="breakfast.thumbnail_url" class="menu-item-img" [alt]="breakfast.name"/>
-          <div class="menu-item-title">{{breakfast.name}}</div>
+          <img [src]="breakfast.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="breakfast.tastyRecipe.name"/>
+          <div class="menu-item-title">{{breakfast.tastyRecipe.name}}</div>
         </div>
         <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
@@ -27,10 +27,10 @@
     <div class="menu-section">
       <span class="menu-section-title">Lunch</span>
       <div class="menu-items-list" >
-        <div class="menu-item" *ngFor="let lunch of lunchRecipes" (click)="openDialog()" (click)="openRecipe(lunch)">
+        <div class="menu-item" *ngFor="let lunch of lunchRecipes" (click)="openDialog(lunch.tastyRecipe, lunch.backendRecipe)" (click)="openRecipe(lunch.tastyRecipe)">
           <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
-          <img [src]="lunch.thumbnail_url" class="menu-item-img" [alt]="lunch.name"/>
-          <div class="menu-item-title">{{lunch.name}}</div>
+          <img [src]="lunch.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="lunch.tastyRecipe.name"/>
+          <div class="menu-item-title">{{lunch.tastyRecipe.name}}</div>
         </div>
         <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
@@ -39,10 +39,10 @@
     <div class="menu-section">
       <span class="menu-section-title">Dinner</span>
       <div class="menu-items-list" >
-        <div class="menu-item" *ngFor="let dinner of dinnerRecipes" (click)="openDialog()" (click)="openRecipe(dinner)">
+        <div class="menu-item" *ngFor="let dinner of dinnerRecipes" (click)="openDialog(dinner.tastyRecipe, dinner.backendRecipe)" (click)="openRecipe(dinner.tastyRecipe)">
           <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
-          <img [src]="dinner.thumbnail_url" class="menu-item-img" [alt]="dinner.name"/>
-          <div class="menu-item-title">{{dinner.name}}</div>
+          <img [src]="dinner.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="dinner.tastyRecipe.name"/>
+          <div class="menu-item-title">{{dinner.tastyRecipe.name}}</div>
         </div>
         <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
