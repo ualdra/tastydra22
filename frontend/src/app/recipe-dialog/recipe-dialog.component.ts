@@ -51,6 +51,12 @@ export class RecipeDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  onDelete() {
+    this.recipeService.deleteRecipe(this.user.id, this.idRecipe).subscribe( () => {
+      this.dialogRef.close();
+    })
+  }
+
   onSave(): void {
 
     let menuInfo: MenuData = {
