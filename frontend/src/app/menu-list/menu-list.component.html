@@ -9,7 +9,9 @@
  <!--  <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_left</mat-icon>
 </button> -->
-  <app-menu-card *ngif="listOfRecipes.length>0" [index]="i" [listOfRecipes]="listOfRecipes"></app-menu-card>
+
+  <app-menu-card *ngIf="listOfRecipes.length>0" [index]="i" [listOfRecipes]="listOfRecipes"></app-menu-card>
+
   <!-- <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_right</mat-icon>
 </button> -->

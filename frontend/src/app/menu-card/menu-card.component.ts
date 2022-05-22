@@ -10,11 +10,13 @@ import { MenuData } from '../menu-data';
 import { ApiTastyServiceService } from '../api-tasty-service.service';
 import { Recipe as TastyRecipe } from '../api-tasty';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',
-  styleUrls: ['./menu-card.component.scss']
+  styleUrls: ['./menu-card.component.scss'],
+  providers: [DatePipe]
 })
 export class MenuCardComponent implements OnInit {
   editItems = false;
@@ -31,7 +33,8 @@ export class MenuCardComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private tastyService: ApiTastyServiceService,
-    private router: Router
+    private router: Router,
+    private datepipe: DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -39,17 +42,21 @@ export class MenuCardComponent implements OnInit {
     date.setDate(date.getDate() + this.index!)
     this.menuInfo = { date: date, type: '', isEdit: true };
     // WARNING, DATES CAN HAVE DIFFERENT FORMATS
-    this.dayRecipes = this.listOfRecipes.filter( recipe => recipe.date === this.menuInfo?.date.toDateString());
+    console.log(this.listOfRecipes)
+    console.log(this.listOfRecipes[0]?.date.toString().substring(0,10))
+    console.log(this.datepipe.transform(this.menuInfo?.date, 'yyyy-MM-dd'))
+    this.dayRecipes = this.listOfRecipes.filter( recipe => recipe.date.toString().substring(0,10) === this.datepipe.transform(this.menuInfo?.date, 'yyyy-MM-dd'));
+    console.log(this.dayRecipes);
     this.clasifier();
   }
 
   clasifier(): void {
     for (let recipe of this.dayRecipes!) {
-      if (recipe.mealType === "breakfast") {
+      if (recipe.mealType === "Breakfast") {
         this.tastyService.getRecipe(recipe.mealId).subscribe( tastyRecipe => {
           this.breakfastRecipes?.push(tastyRecipe);
         })
-      } else if (recipe.mealType === "lunch") {
+      } else if (recipe.mealType === "Lunch") {
         this.tastyService.getRecipe(recipe.mealId).subscribe( tastyRecipe => {
           this.lunchRecipes?.push(tastyRecipe);
         })
