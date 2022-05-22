@@ -39,7 +39,7 @@ export class RecipeDialogComponent implements OnInit {
           (this.user = us)
         });
     this.isEdit = data.isEdit;
-    this.idRecipe =  data.idRecipe;
+    this.idRecipe =  data.recipe.id;
   }
 
   ngOnInit(): void {
@@ -51,6 +51,12 @@ export class RecipeDialogComponent implements OnInit {
 
   onSave(): void {
     
+    let menuInfo: MenuData = {
+      date: this.dateSelected,
+      type: this.typeSelected,
+      isEdit: this.isEdit,
+    };
+    
     let recipe: Recipe = {
       mealId: this.idRecipe,
       date: this.dateSelected,
@@ -59,7 +65,7 @@ export class RecipeDialogComponent implements OnInit {
     };
     this.recipeService.addRecipeToUser(this.user.id, recipe).subscribe(
       () => {
-        this.dialogRef.close(recipe);
+        this.dialogRef.close(menuInfo);
       }
     );
     
