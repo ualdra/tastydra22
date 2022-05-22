@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { MenuCardComponent } from '../menu-card/menu-card.component';
 import { Recipe } from '../recipe';
 import { RecipeService } from '../recipe.service';
 import { User } from '../user';
@@ -28,13 +29,19 @@ export class MenuListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  refresh(): void {
+    this.getUserRecipes();
+    console.log("DONE")
+    //location.reload();
+  }
+
   getUserRecipes(){
     if (this.user?.id !== null) {
       this.recipeService
         .getRecipesByUserId(this.user?.id)
         .subscribe((recipes: Recipe[]) => {
           this.listOfRecipes = [];
-          this.listOfRecipes.push(...recipes);
+          this.listOfRecipes = recipes;
           if (this.listOfRecipes.length === 0) {
             this.text = 'You have no menus';
           }else{

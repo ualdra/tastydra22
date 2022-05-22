@@ -1,7 +1,7 @@
 <div class="dialog-header">
   <h1 mat-dialog-title *ngIf="!isEdit">Save recipe</h1>
   <h1 mat-dialog-title *ngIf="isEdit">Edit recipe</h1>
-  <button mat-icon-button class="remove-button" *ngIf="isEdit">
+  <button mat-icon-button class="remove-button" *ngIf="isEdit" (click)="onDelete()">
     <mat-icon>delete</mat-icon>
   </button>
 </div>
