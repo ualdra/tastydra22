@@ -50,10 +50,12 @@ export class RecipeDialogComponent implements OnInit {
   }
 
   onSave(): void {
-    let menuInfo: MenuData = {
+    
+    let recipe: Recipe = {
+      mealId: this.idRecipe,
       date: this.dateSelected,
-      type: this.typeSelected,
-      isEdit: this.isEdit,
+      mealType: this.typeSelected,
+      id: null
     };
     let recipe: Recipe = {
       mealId: this.idRecipe,
