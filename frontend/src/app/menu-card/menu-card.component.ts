@@ -26,9 +26,9 @@ export class MenuCardComponent implements OnInit {
   @Input() listOfRecipes: Recipe[] = [];
   dayRecipes?: Recipe[];
 
-  breakfastRecipes?: TastyRecipe[] = [];
-  lunchRecipes?: TastyRecipe[] = [];
-  dinnerRecipes?: TastyRecipe[] = [];
+  breakfastRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
+  lunchRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
+  dinnerRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
 
   constructor(
     public dialog: MatDialog,
@@ -50,15 +50,15 @@ export class MenuCardComponent implements OnInit {
     for (let recipe of this.dayRecipes!) {
       if (recipe.mealType === "Breakfast") {
         this.tastyService.getRecipe(recipe.mealId).subscribe( tastyRecipe => {
-          this.breakfastRecipes?.push(tastyRecipe);
+          this.breakfastRecipes?.push({tastyRecipe, backendRecipe: recipe});
         })
       } else if (recipe.mealType === "Lunch") {
         this.tastyService.getRecipe(recipe.mealId).subscribe( tastyRecipe => {
-          this.lunchRecipes?.push(tastyRecipe);
+          this.lunchRecipes?.push({tastyRecipe, backendRecipe: recipe});
         })
       } else {
         this.tastyService.getRecipe(recipe.mealId).subscribe( tastyRecipe => {
-          this.dinnerRecipes?.push(tastyRecipe);
+          this.dinnerRecipes?.push({tastyRecipe, backendRecipe: recipe});
         })
       }
     }
@@ -74,13 +74,15 @@ export class MenuCardComponent implements OnInit {
     this.router.navigate(['/recipes']);
   }
 
-  openDialog(): void {
+  openDialog(tastyRecipe: TastyRecipe, backendRecipe: Recipe): void {
 
     if(this.editItems){
     const dialogRef = this.dialog.open(RecipeDialogComponent, {
       width: '500px',
       data: {
         isEdit: true,
+        recipe: backendRecipe,
+        mealRecipe: tastyRecipe
       },
     });
 
@@ -91,6 +93,7 @@ export class MenuCardComponent implements OnInit {
           type: result.type,
           isEdit: result.isEdit,
         };
+
       }
     });
   }

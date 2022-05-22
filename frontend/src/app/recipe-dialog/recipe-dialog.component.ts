@@ -20,14 +20,15 @@ import { UserService } from '../user.service';
 })
 
 export class RecipeDialogComponent implements OnInit {
-  idRecipe : number = -1; 
+  idRecipe : number = -1;
+  mealRecipe : number = -1;
   dateSelected: Date = new Date();
   types: string[] = ['Breakfast', 'Lunch', 'Dinner'];
   typeSelected: string = '';
   isEdit = false;
   public user$: Observable<User>;
   public user: any;
-  
+
   constructor(
     public dialogRef: MatDialogRef<RecipeDialogComponent>,
     private recipeService : RecipeService,
@@ -40,6 +41,7 @@ export class RecipeDialogComponent implements OnInit {
         });
     this.isEdit = data.isEdit;
     this.idRecipe =  data.recipe.id;
+    this.mealRecipe = data.mealRecipe.id
   }
 
   ngOnInit(): void {
@@ -50,24 +52,24 @@ export class RecipeDialogComponent implements OnInit {
   }
 
   onSave(): void {
-    
+
     let menuInfo: MenuData = {
       date: this.dateSelected,
       type: this.typeSelected,
       isEdit: this.isEdit,
     };
-    
+
     let recipe: Recipe = {
-      mealId: this.idRecipe,
+      mealId: this.mealRecipe,
       date: this.dateSelected,
       mealType: this.typeSelected,
-      id: null
+      id: this.idRecipe
     };
-    this.recipeService.addRecipeToUser(this.user.id, recipe).subscribe(
+    this.recipeService.updateRecipe(recipe.id??0, recipe).subscribe(
       () => {
         this.dialogRef.close(menuInfo);
       }
     );
-    
+
   }
 }
