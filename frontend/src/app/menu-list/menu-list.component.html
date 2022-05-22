@@ -5,13 +5,13 @@
   </div>
 </div>
 
-<div class="menu-list" *ngFor="let i of [0, 1, 2, 3, 4]">
+<div class="menu-list">
  <!--  <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_left</mat-icon>
 </button> -->
-
-  <app-menu-card *ngIf="listOfRecipes.length>0" [index]="i" [listOfRecipes]="listOfRecipes"></app-menu-card>
-
+  <div *ngFor="let i of [0, 1, 2, 3, 4]">
+    <app-menu-card *ngIf="listOfRecipes.length>0" [index]="i" [listOfRecipes]="listOfRecipes"></app-menu-card>
+  </div>
   <!-- <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_right</mat-icon>
 </button> -->

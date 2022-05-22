@@ -42,11 +42,7 @@ export class MenuCardComponent implements OnInit {
     date.setDate(date.getDate() + this.index!)
     this.menuInfo = { date: date, type: '', isEdit: true };
     // WARNING, DATES CAN HAVE DIFFERENT FORMATS
-    console.log(this.listOfRecipes)
-    console.log(this.listOfRecipes[0]?.date.toString().substring(0,10))
-    console.log(this.datepipe.transform(this.menuInfo?.date, 'yyyy-MM-dd'))
     this.dayRecipes = this.listOfRecipes.filter( recipe => recipe.date.toString().substring(0,10) === this.datepipe.transform(this.menuInfo?.date, 'yyyy-MM-dd'));
-    console.log(this.dayRecipes);
     this.clasifier();
   }
 
@@ -70,7 +66,12 @@ export class MenuCardComponent implements OnInit {
 
   openRecipe(recipe: TastyRecipe) {
     if (this.editItems) return;
-    this.router.navigate(['/recipe', {id: recipe.id}]);
+    this.router.navigate(['/recipe/'+recipe.id]);
+  }
+
+  add(): void {
+    if (this.editItems) return;
+    this.router.navigate(['/recipes']);
   }
 
   openDialog(): void {

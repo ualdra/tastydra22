@@ -20,7 +20,7 @@
           <img [src]="breakfast.thumbnail_url" class="menu-item-img" [alt]="breakfast.name"/>
           <div class="menu-item-title">{{breakfast.name}}</div>
         </div>
-        <mat-icon class="menu-add-button">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
           <img [src]="lunch.thumbnail_url" class="menu-item-img" [alt]="lunch.name"/>
           <div class="menu-item-title">{{lunch.name}}</div>
         </div>
-        <mat-icon class="menu-add-button">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
           <img [src]="dinner.thumbnail_url" class="menu-item-img" [alt]="dinner.name"/>
           <div class="menu-item-title">{{dinner.name}}</div>
         </div>
-        <mat-icon class="menu-add-button">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
       </div>
     </div>
 
