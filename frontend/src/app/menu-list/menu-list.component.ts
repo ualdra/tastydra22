@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MenuCardComponent } from '../menu-card/menu-card.component';
@@ -16,23 +16,26 @@ export class MenuListComponent implements OnInit {
   public user: any;
   listOfRecipes: Recipe[] = [];
   text: string = '';
+  @ViewChildren(MenuCardComponent) menuCards?: QueryList<MenuCardComponent>;
+  refreshing: Boolean = false;
 
   constructor(
     private store: Store<{ user: User }>,
     private recipeService: RecipeService
   ) {
     this.user$ = this.store.select('user');
-    this.user$.subscribe((us) => (this.user = us));
-    this.getUserRecipes();
+    this.user$.subscribe((us) => {
+      this.user = us;
+      this.getUserRecipes();
+    });
   }
 
   ngOnInit(): void {
   }
 
   refresh(): void {
+    this.refreshing = true;
     this.getUserRecipes();
-    console.log("DONE")
-    //location.reload();
   }
 
   getUserRecipes(){
@@ -46,6 +49,12 @@ export class MenuListComponent implements OnInit {
             this.text = 'You have no menus';
           }else{
             this.text = "";
+          }
+          if (this.refreshing) {
+            for (let menuCard of this.menuCards!) {
+              menuCard.reset();
+            };
+            this.refreshing = false;
           }
         });
     } else {

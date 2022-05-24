@@ -26,9 +26,9 @@ export class MenuCardComponent implements OnInit {
   @Input() listOfRecipes: Recipe[] = [];
   dayRecipes?: Recipe[];
 
-  breakfastRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
-  lunchRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
-  dinnerRecipes?: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
+  breakfastRecipes: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
+  lunchRecipes: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
+  dinnerRecipes: {tastyRecipe:TastyRecipe, backendRecipe: Recipe}[] = [];
 
   @Output() refresh: EventEmitter<String> = new EventEmitter();
   iterableDiffer: any;
@@ -47,10 +47,16 @@ export class MenuCardComponent implements OnInit {
     this.clasifier();
   }
 
+  reset(): void {
+    this.breakfastRecipes = [];
+    this.lunchRecipes = [];
+    this.dinnerRecipes = [];
+    setTimeout(() => {this.clasifier()}, 1000);
+  }
+
   clasifier(): void {
     // WARNING, DATES CAN HAVE DIFFERENT FORMATS
     this.dayRecipes = this.listOfRecipes.filter( recipe => recipe.date.toString().substring(0,10) === this.datepipe.transform(this.menuInfo?.date, 'yyyy-MM-dd'));
-    this.breakfastRecipes, this.lunchRecipes, this.dinnerRecipes = [];
 
     for (let recipe of this.dayRecipes!) {
       if (recipe.mealType === "Breakfast") {
