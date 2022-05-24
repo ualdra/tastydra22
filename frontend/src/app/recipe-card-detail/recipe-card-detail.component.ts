@@ -22,7 +22,7 @@ export class RecipeCardDetailComponent implements OnInit {
   menuInfo?: MenuData = { date: new Date(), type: '', isEdit: false };
   public user$: Observable<User> | undefined;
   public user: any;
-  
+
   constructor(
     public dialog: MatDialog,
     private store: Store<{ user: User }>,
@@ -45,7 +45,7 @@ export class RecipeCardDetailComponent implements OnInit {
       width: '500px',
       data: {
         isEdit: false,
-        recipe :this.recipe
+        mealRecipe:this.recipe
       },
     });
 

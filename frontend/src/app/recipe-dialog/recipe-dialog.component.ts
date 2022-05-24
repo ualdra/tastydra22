@@ -40,7 +40,7 @@ export class RecipeDialogComponent implements OnInit {
           (this.user = us)
         });
     this.isEdit = data.isEdit;
-    this.idRecipe =  data.recipe.id;
+    this.idRecipe =  data.recipe?.id;
     this.mealRecipe = data.mealRecipe.id
   }
 
@@ -53,7 +53,7 @@ export class RecipeDialogComponent implements OnInit {
 
   onDelete() {
     this.recipeService.deleteRecipe(this.user.id, this.idRecipe).subscribe( () => {
-      this.dialogRef.close();
+      this.dialogRef.close(null);
     })
   }
 
@@ -71,11 +71,20 @@ export class RecipeDialogComponent implements OnInit {
       mealType: this.typeSelected,
       id: this.idRecipe
     };
-    this.recipeService.updateRecipe(recipe.id??0, recipe).subscribe(
-      () => {
-        this.dialogRef.close(menuInfo);
-      }
-    );
+
+    if (this.isEdit) {
+      this.recipeService.updateRecipe(recipe.id??0, recipe).subscribe(
+        () => {
+          this.dialogRef.close(menuInfo);
+        }
+      );
+    } else {
+      this.recipeService.addRecipeToUser(this.user.id, recipe).subscribe(
+        () => {
+          this.dialogRef.close(menuInfo);
+        }
+      );
+    }
 
   }
 }
