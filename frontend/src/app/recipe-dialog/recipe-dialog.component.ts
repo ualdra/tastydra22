@@ -53,7 +53,7 @@ export class RecipeDialogComponent implements OnInit {
 
   onDelete() {
     this.recipeService.deleteRecipe(this.user.id, this.idRecipe).subscribe( () => {
-      this.dialogRef.close();
+      this.dialogRef.close(null);
     })
   }
 

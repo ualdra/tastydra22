@@ -98,14 +98,15 @@ export class MenuCardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (result != undefined) {
+      if (result === undefined) return;
+      if (result !== null) {
         this.menuInfo = {
           date: result.date,
           type: result.type,
           isEdit: result.isEdit,
         };
-        this.refresh.emit();
       }
+      this.refresh.emit();
     });
   }
 }
