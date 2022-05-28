@@ -58,7 +58,7 @@ export class MenuListComponent implements OnInit {
           }
         });
     } else {
-      this.text = 'Not logged in user cannot have menus';
+      this.text = 'Log in to access the menu';
     }
   }
 }

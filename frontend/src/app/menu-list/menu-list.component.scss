@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+.access-alert{
+  padding-top: 200px;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
 #text.mat-card {
   display: inline-block;
   text-align: center;

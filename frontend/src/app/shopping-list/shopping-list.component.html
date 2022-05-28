@@ -1,16 +1,23 @@
 <div class="main">
-  <div class="add-item">
-    <input [(ngModel)]="newItem" type="text" placeholder="New Item" />
-    <div class="add-item-button">
-      <mat-icon (click)="handleAddItem()" class="white">add</mat-icon>
+
+  <div class="add-bar" *ngIf="text !=='Log in to access shopping list'">
+    <input type="text" placeholder="New Item" #search>
+    <div class="add-button" (click)="handleAddItem()">
+      <mat-icon class="white">add</mat-icon>
     </div>
   </div>
-  <div class="menu-content">
-    <div class="mat-card">
-      SHOPPING LIST
+
+  <div class="access-alert">
+    <div *ngIf="text.length>0" id="text" class="mat-card ">
+      Shopping List
       <div>
         {{ text }}
       </div>
+    </div>
+    </div>
+
+  <div class="menu-content" *ngIf="text.length==0">
+    <div class="mat-card">
       <ul>
         <li *ngFor="let item of listOfIngredient">
           <mat-checkbox

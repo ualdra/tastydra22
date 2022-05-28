@@ -1,6 +1,7 @@
 <div class="box">
-  <mat-card>
-    <div *ngIf="!isLogged">
+  <mat-card >
+    <div *ngIf="!isLogged" class="login-form">
+      <div class="login-title">Log In</div>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput [(ngModel)]="signin.email" />

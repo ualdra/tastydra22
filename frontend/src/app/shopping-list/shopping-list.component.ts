@@ -72,7 +72,7 @@ export class ShoppingListComponent implements OnInit {
           }
         });
     } else {
-      this.text = 'Not logged in user cannot have shopping list';
+      this.text = 'Log in to access shopping list';
     }
   }
 }
