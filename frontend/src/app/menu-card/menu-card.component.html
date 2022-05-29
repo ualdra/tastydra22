@@ -20,7 +20,7 @@
           <img [src]="breakfast.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="breakfast.tastyRecipe.name"/>
           <div class="menu-item-title">{{breakfast.tastyRecipe.name}}</div>
         </div>
-        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add('Breakfast', menuInfo!.date)">add</mat-icon>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
           <img [src]="lunch.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="lunch.tastyRecipe.name"/>
           <div class="menu-item-title">{{lunch.tastyRecipe.name}}</div>
         </div>
-        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add('Lunch', menuInfo!.date)">add</mat-icon>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
           <img [src]="dinner.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="dinner.tastyRecipe.name"/>
           <div class="menu-item-title">{{dinner.tastyRecipe.name}}</div>
         </div>
-        <mat-icon class="menu-add-button" (click)="add()">add</mat-icon>
+        <mat-icon class="menu-add-button" (click)="add('Dinner', menuInfo!.date)">add</mat-icon>
       </div>
     </div>
 

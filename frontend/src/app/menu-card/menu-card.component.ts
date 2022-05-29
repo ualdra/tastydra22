@@ -11,6 +11,7 @@ import { ApiTastyServiceService } from '../api-tasty-service.service';
 import { Recipe as TastyRecipe } from '../api-tasty';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { AddRecipeService } from '../add-recipe.service';
 
 @Component({
   selector: 'app-menu-card',
@@ -37,7 +38,8 @@ export class MenuCardComponent implements OnInit {
     public dialog: MatDialog,
     private tastyService: ApiTastyServiceService,
     private router: Router,
-    private datepipe: DatePipe
+    private datepipe: DatePipe,
+    private addRecipe: AddRecipeService
   ) {}
 
   ngOnInit(): void {
@@ -80,8 +82,10 @@ export class MenuCardComponent implements OnInit {
     this.router.navigate(['/recipe/'+recipe.id]);
   }
 
-  add(): void {
+  add(type: String, date: Date): void {
     if (this.editItems) return;
+    this.addRecipe.date = date;
+    this.addRecipe.type = type;
     this.router.navigate(['/recipes']);
   }
 
