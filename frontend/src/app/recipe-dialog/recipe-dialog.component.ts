@@ -12,6 +12,7 @@ import { MenuData } from '../menu-data';
 import { RecipeService } from '../recipe.service';
 import { User } from '../user';
 import { UserService } from '../user.service';
+import { AddRecipeService } from '../add-recipe.service';
 
 @Component({
   selector: 'app-recipe-dialog',
@@ -33,6 +34,7 @@ export class RecipeDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<RecipeDialogComponent>,
     private recipeService : RecipeService,
     private store: Store<{ user: User }>,
+    private addRecipe: AddRecipeService,
     @Inject(MAT_DIALOG_DATA) public data: any
       ) {
         this.user$ = this.store.select('user');
@@ -42,6 +44,11 @@ export class RecipeDialogComponent implements OnInit {
     this.isEdit = data.isEdit;
     this.idRecipe =  data.recipe?.id;
     this.mealRecipe = data.mealRecipe.id
+    if(this.addRecipe.date && this.addRecipe.type){
+      this.dateSelected = this.addRecipe.date!;
+      this.typeSelected = this.addRecipe.type!.toString(); 
+      
+    }
   }
 
   ngOnInit(): void {
@@ -58,6 +65,9 @@ export class RecipeDialogComponent implements OnInit {
   }
 
   onSave(): void {
+    // Reset Service
+    this.addRecipe.type = undefined;
+    this.addRecipe.date = undefined;
 
     let menuInfo: MenuData = {
       date: this.dateSelected,
