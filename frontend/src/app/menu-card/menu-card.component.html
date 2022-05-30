@@ -16,7 +16,11 @@
       <span class="menu-section-title">Breakfast</span>
       <div class="menu-items-list" >
         <div class="menu-item" *ngFor="let breakfast of breakfastRecipes" (click)="openDialog(breakfast.tastyRecipe, breakfast.backendRecipe)" (click)="openRecipe(breakfast.tastyRecipe)">
-          <div *ngIf="editItems" class="menu-item-overlay"><div class="test"><mat-icon class="edit-item-icon">edit</mat-icon></div></div>
+          <div *ngIf="editItems" class="menu-item-overlay">
+            <div class="test">
+              <mat-icon class="edit-item-icon">edit</mat-icon>
+            </div>
+          </div>
           <img [src]="breakfast.tastyRecipe.thumbnail_url" class="menu-item-img" [alt]="breakfast.tastyRecipe.name"/>
           <div class="menu-item-title">{{breakfast.tastyRecipe.name}}</div>
         </div>

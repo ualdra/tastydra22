@@ -3,6 +3,7 @@ $green-accent-hover: #4a5710;
 $green-soft: #CFE085;
 
 .mat-card{
+  min-width: 250px;
   // width: 400px;
   display: inline-block;
   text-align: center;
@@ -113,6 +114,10 @@ $green-soft: #CFE085;
 }
 
 .menu-item-title{
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: bold;
   font-size: small;
   font-family: 'Inter', sans-serif;

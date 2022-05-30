@@ -1,5 +1,5 @@
-<div class="access-alert">
-<div *ngIf="text.length>0" id="text" class="mat-card ">
+<div class="access-alert" *ngIf="text==='Log in to access the menu'">
+<div  id="text" class="mat-card ">
   Menu
   <div>
     {{ text }}
@@ -7,7 +7,7 @@
 </div>
 </div>
 
-<div class="menu-list">
+<div class="menu-list" *ngIf="text!=='Log in to access the menu'">
  <!--  <button mat-icon-button>
   <mat-icon class="arrow-button">keyboard_arrow_left</mat-icon>
 </button> -->
