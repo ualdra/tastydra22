@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:8081/api/'
+  url: 'https://tasty-dra-22.herokuapp.com/api'
 };
